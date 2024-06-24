@@ -47,4 +47,39 @@ class DoctorRepoImpl implements DoctorRepo {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, bool>> updateDoctorProfile(
+      {required String email,
+      required String firstName,
+      required String lastName,
+      required String phoneNumber,
+      required String gender}) async {
+    try {
+      final response = await doctorDataSource.updateDoctorProfile(
+          email: email,
+          firstName: firstName,
+          lastName: lastName,
+          phoneNumber: phoneNumber,
+          gender: gender);
+      return response["isSuccess"]
+          ? const Right(true)
+          : Left(ServerFailure(response['errors'][0]));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, Doctor>> getUserData() async {
+    try {
+      final response = await doctorDataSource.getUserData();
+
+      return response["isSuccess"]
+          ? Right(Doctor.fromJson(response['value']))
+          : Left(ServerFailure(response['errors'][0]));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
 }

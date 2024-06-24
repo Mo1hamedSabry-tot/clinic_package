@@ -7,3 +7,4 @@ export 'no_params.dart';
 export 'prescription_inputs.dart';
 export 'register_input.dart';
 export 'schedule_inputs.dart';
+export 'update_doctor_profile_input.dart';

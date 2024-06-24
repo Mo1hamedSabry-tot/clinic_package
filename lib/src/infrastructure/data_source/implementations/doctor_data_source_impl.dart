@@ -9,7 +9,8 @@ import 'package:dio/dio.dart';
 
 class DoctorDataSourceImpl implements DoctorDataSource {
   final BaseDio dioClient;
-
+  String? token = preferences.getString('token');
+  String? userId = preferences.getString('userId');
   DoctorDataSourceImpl({required this.dioClient});
 
   @override
@@ -54,5 +55,44 @@ class DoctorDataSourceImpl implements DoctorDataSource {
     } catch (e) {
       rethrow;
     }
+  }
+
+  @override
+  Future<Map<String, dynamic>> updateDoctorProfile(
+      {required String email,
+      required String firstName,
+      required String lastName,
+      required String phoneNumber,
+      required String gender}) async {
+    final response = await dioClient.put(
+      '/Doctor/$userId',
+      data: {
+        "email": email,
+        "firstName": firstName,
+        "lastName": lastName,
+        "phoneNumber": phoneNumber,
+      },
+      options: Options(
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer $token",
+        },
+      ),
+    );
+
+    return response.data;
+  }
+
+  @override
+  Future<Map<String, dynamic>> getUserData() async {
+    final response = await dioClient.get(
+      '/Doctor/$userId',
+      options: Options(
+        headers: {
+          "Authorization": "Bearer $token",
+        },
+      ),
+    );
+    return response.data;
   }
 }
