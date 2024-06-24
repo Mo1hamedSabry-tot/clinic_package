@@ -8,3 +8,4 @@ export 'prescription_data_source.dart';
 export 'schedule_data_source.dart';
 export 'search_data_source.dart';
 export 'update_personal_data_source.dart';
+export 'time_slot_data_source.dart';

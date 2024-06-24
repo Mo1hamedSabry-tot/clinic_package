@@ -12,3 +12,4 @@ export 'get_schedules_by_day_impl.dart';
 export 'login_query_impl.dart';
 export 'register_query_impl.dart';
 export 'update_personal_data_query_impl.dart';
+export 'get_time_slots_query_impl.dart';

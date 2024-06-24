@@ -8,3 +8,4 @@ export 'prescription_repo.dart';
 export 'schedule_repo.dart';
 export 'search_repo.dart';
 export 'update_personal_data_repo.dart';
+export 'time_slot_repo.dart';

@@ -7,3 +7,4 @@ export 'prescription_contract.dart';
 export 'schedule_contract.dart';
 export 'search.dart';
 export 'update_personal_data.dart';
+export 'time_slot_contracts.dart';
