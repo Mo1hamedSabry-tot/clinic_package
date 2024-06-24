@@ -1,0 +1,13 @@
+export 'appointment_entity.dart';
+export 'category_entity.dart';
+export 'change_password_entity.dart';
+export 'doctors_entity.dart';
+export 'generic_entity.dart';
+export 'get_doctor_by_id_entity.dart';
+export 'get_doctors_by_category_entity.dart';
+export 'get_me_entity.dart';
+export 'login_entity.dart';
+export 'medical_history_entity.dart';
+export 'prescription_entity.dart';
+export 'schedule_entity.dart';
+export 'time_slot_entity.dart';
