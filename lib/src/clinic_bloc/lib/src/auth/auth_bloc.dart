@@ -66,7 +66,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
                     SharedKeys.userName, r.value?.userName ?? "");
                 preferences.setString(
                     SharedKeys.password, r.value?.userName ?? "");
-
                 preferences.setString(SharedKeys.id, r.value?.id ?? "");
               } else {
                 emit(

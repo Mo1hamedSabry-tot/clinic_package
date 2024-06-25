@@ -15,9 +15,10 @@ class DioClient extends BaseDio {
         _options = options,
         _dio = dio {
     _dio.options = _options;
-    for (final interceptor in _interceptors) {
-      _dio.interceptors.add(interceptor);
-    }
+    _dio.interceptors.addAll(_interceptors);
+    // for (final interceptor in _interceptors) {
+    //   _dio.interceptors.add(interceptor);
+    // }
   }
 
   @override
