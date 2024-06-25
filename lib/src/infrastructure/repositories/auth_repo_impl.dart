@@ -1,10 +1,9 @@
 import 'package:clinic_package/src/core/utils/di_container.dart';
-
-import '../../domain/entities/change_password_entity.dart';
 import 'package:dartz/dartz.dart';
 
 import '../../core/network/failure.dart';
 import '../../core/utils/shared_keys.dart';
+import '../../domain/entities/change_password_entity.dart';
 import '../../domain/entities/login_entity.dart';
 import '../../domain/repos/auth_repo.dart';
 import '../data_source/abstractions/auth_data_source.dart';
@@ -26,16 +25,13 @@ class AuthRepoImpl implements AuthRepo {
         username: username,
         password: password,
       );
-      if ((response['value']['roles'] as List).contains("Patient")) {
-        preferences.setString(
-          SharedKeys.accessToken,
-          response['value']['token'],
-        );
-        preferences.setString(SharedKeys.userId, response['value']['id']);
-        return Right(LoginEntity.fromJson(response));
-      } else {
-        return const Left(BadRequestFailure("User not authoriezd"));
-      }
+
+      preferences.setString(
+        SharedKeys.accessToken,
+        response['value']['token'],
+      );
+      preferences.setString(SharedKeys.userId, response['value']['id']);
+      return Right(LoginEntity.fromJson(response));
     } catch (e) {
       return Left(ServerFailure(e.toString()));
     }
@@ -71,7 +67,8 @@ class AuthRepoImpl implements AuthRepo {
   }
 
   @override
-  Future<Either<Failure, ChangePasswordEntity>> changePassword({required String currentPassword, required String newPassword}) async{
+  Future<Either<Failure, ChangePasswordEntity>> changePassword(
+      {required String currentPassword, required String newPassword}) async {
     try {
       final response = await authDataSource.changePassword(
         currentPassword: currentPassword,
