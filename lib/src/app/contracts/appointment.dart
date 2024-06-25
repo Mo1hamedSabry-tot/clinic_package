@@ -1,5 +1,4 @@
 import 'package:clinic_package/src/core/network/failure.dart';
-import 'package:clinic_package/src/domain/entities/appointment_entity.dart';
 import 'package:dartz/dartz.dart';
 
 import '../../domain/domain.dart';
@@ -9,6 +8,7 @@ import '../core/primitives/inputs/no_params.dart';
 
 abstract class GetAppointmentQuery extends BaseQuery<
     Future<Either<Failure, List<AppointmentEntity>>>, NoParams> {}
+
 abstract class GetAppointmentForDoctorQuery extends BaseQuery<
     Future<Either<Failure, List<AppointmentEntity>>>, NoParams> {}
 
@@ -17,6 +17,6 @@ abstract class AddAppointmentCommand
 
 abstract class DeleteAppointmentCommand
     extends BaseQuery<Future<Either<Failure, bool>>, String> {}
-    abstract class ChangeStatusAppointmentCommand
-    extends BaseQuery<Future<Either<Failure, ChangeAppointmentStatusEntity>>, String> {}
 
+abstract class ChangeStatusAppointmentCommand extends BaseQuery<
+    Future<Either<Failure, ChangeAppointmentStatusEntity>>, String> {}

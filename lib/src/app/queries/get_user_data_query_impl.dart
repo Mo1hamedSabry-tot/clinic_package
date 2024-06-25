@@ -1,5 +1,4 @@
 import 'package:clinic_package/clinic_package.dart';
-import 'package:clinic_package/src/app/contracts/get_user_data.dart';
 import 'package:dartz/dartz.dart';
 
 class GetUserDataQueryImpl implements GetUserDataQuery {

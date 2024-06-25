@@ -83,10 +83,14 @@ class AppointmentBloc extends Bloc<AppointmentEvent, AppointmentState> {
     _GetAppointmentForDoctor event,
     Emitter<AppointmentState> emit,
   ) async {
-      final result = await _getAppointmentQuery.call(NoParams());
-    result.fold(
-        (l) => emit(_Failed(message: l.message)),
-        (r) => emit(
-            _Success(appointments: r, isAdded: false, isDeleted: false)));
+    try {
+      final result = await _getAppointmentForDoctorQuery.call(NoParams());
+      result.fold(
+          (l) => emit(_Failed(message: l.message)),
+          (r) => emit(
+              _Success(appointments: r, isAdded: false, isDeleted: false)));
+    } catch (e) {
+      emit(_Failed(message: e.toString()));
+    }
   }
 }
