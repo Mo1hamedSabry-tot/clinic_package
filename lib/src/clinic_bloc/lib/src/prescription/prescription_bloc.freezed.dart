@@ -15,6 +15,331 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
+mixin _$PrescriptionEvent {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String appointmentId) getAll,
+    required TResult Function(PrescriptionInputs inputs) add,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String appointmentId)? getAll,
+    TResult? Function(PrescriptionInputs inputs)? add,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String appointmentId)? getAll,
+    TResult Function(PrescriptionInputs inputs)? add,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetAll value) getAll,
+    required TResult Function(_Add value) add,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetAll value)? getAll,
+    TResult? Function(_Add value)? add,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetAll value)? getAll,
+    TResult Function(_Add value)? add,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PrescriptionEventCopyWith<$Res> {
+  factory $PrescriptionEventCopyWith(
+          PrescriptionEvent value, $Res Function(PrescriptionEvent) then) =
+      _$PrescriptionEventCopyWithImpl<$Res, PrescriptionEvent>;
+}
+
+/// @nodoc
+class _$PrescriptionEventCopyWithImpl<$Res, $Val extends PrescriptionEvent>
+    implements $PrescriptionEventCopyWith<$Res> {
+  _$PrescriptionEventCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$GetAllImplCopyWith<$Res> {
+  factory _$$GetAllImplCopyWith(
+          _$GetAllImpl value, $Res Function(_$GetAllImpl) then) =
+      __$$GetAllImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String appointmentId});
+}
+
+/// @nodoc
+class __$$GetAllImplCopyWithImpl<$Res>
+    extends _$PrescriptionEventCopyWithImpl<$Res, _$GetAllImpl>
+    implements _$$GetAllImplCopyWith<$Res> {
+  __$$GetAllImplCopyWithImpl(
+      _$GetAllImpl _value, $Res Function(_$GetAllImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? appointmentId = null,
+  }) {
+    return _then(_$GetAllImpl(
+      appointmentId: null == appointmentId
+          ? _value.appointmentId
+          : appointmentId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAllImpl implements _GetAll {
+  const _$GetAllImpl({required this.appointmentId});
+
+  @override
+  final String appointmentId;
+
+  @override
+  String toString() {
+    return 'PrescriptionEvent.getAll(appointmentId: $appointmentId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllImpl &&
+            (identical(other.appointmentId, appointmentId) ||
+                other.appointmentId == appointmentId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, appointmentId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAllImplCopyWith<_$GetAllImpl> get copyWith =>
+      __$$GetAllImplCopyWithImpl<_$GetAllImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String appointmentId) getAll,
+    required TResult Function(PrescriptionInputs inputs) add,
+  }) {
+    return getAll(appointmentId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String appointmentId)? getAll,
+    TResult? Function(PrescriptionInputs inputs)? add,
+  }) {
+    return getAll?.call(appointmentId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String appointmentId)? getAll,
+    TResult Function(PrescriptionInputs inputs)? add,
+    required TResult orElse(),
+  }) {
+    if (getAll != null) {
+      return getAll(appointmentId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetAll value) getAll,
+    required TResult Function(_Add value) add,
+  }) {
+    return getAll(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetAll value)? getAll,
+    TResult? Function(_Add value)? add,
+  }) {
+    return getAll?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetAll value)? getAll,
+    TResult Function(_Add value)? add,
+    required TResult orElse(),
+  }) {
+    if (getAll != null) {
+      return getAll(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetAll implements PrescriptionEvent {
+  const factory _GetAll({required final String appointmentId}) = _$GetAllImpl;
+
+  String get appointmentId;
+  @JsonKey(ignore: true)
+  _$$GetAllImplCopyWith<_$GetAllImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddImplCopyWith<$Res> {
+  factory _$$AddImplCopyWith(_$AddImpl value, $Res Function(_$AddImpl) then) =
+      __$$AddImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({PrescriptionInputs inputs});
+}
+
+/// @nodoc
+class __$$AddImplCopyWithImpl<$Res>
+    extends _$PrescriptionEventCopyWithImpl<$Res, _$AddImpl>
+    implements _$$AddImplCopyWith<$Res> {
+  __$$AddImplCopyWithImpl(_$AddImpl _value, $Res Function(_$AddImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? inputs = null,
+  }) {
+    return _then(_$AddImpl(
+      inputs: null == inputs
+          ? _value.inputs
+          : inputs // ignore: cast_nullable_to_non_nullable
+              as PrescriptionInputs,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddImpl implements _Add {
+  const _$AddImpl({required this.inputs});
+
+  @override
+  final PrescriptionInputs inputs;
+
+  @override
+  String toString() {
+    return 'PrescriptionEvent.add(inputs: $inputs)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddImpl &&
+            (identical(other.inputs, inputs) || other.inputs == inputs));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, inputs);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddImplCopyWith<_$AddImpl> get copyWith =>
+      __$$AddImplCopyWithImpl<_$AddImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String appointmentId) getAll,
+    required TResult Function(PrescriptionInputs inputs) add,
+  }) {
+    return add(inputs);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String appointmentId)? getAll,
+    TResult? Function(PrescriptionInputs inputs)? add,
+  }) {
+    return add?.call(inputs);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String appointmentId)? getAll,
+    TResult Function(PrescriptionInputs inputs)? add,
+    required TResult orElse(),
+  }) {
+    if (add != null) {
+      return add(inputs);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetAll value) getAll,
+    required TResult Function(_Add value) add,
+  }) {
+    return add(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetAll value)? getAll,
+    TResult? Function(_Add value)? add,
+  }) {
+    return add?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetAll value)? getAll,
+    TResult Function(_Add value)? add,
+    required TResult orElse(),
+  }) {
+    if (add != null) {
+      return add(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Add implements PrescriptionEvent {
+  const factory _Add({required final PrescriptionInputs inputs}) = _$AddImpl;
+
+  PrescriptionInputs get inputs;
+  @JsonKey(ignore: true)
+  _$$AddImplCopyWith<_$AddImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$PrescriptionState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -619,330 +944,5 @@ abstract class _Failure implements PrescriptionState {
   String get message;
   @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$PrescriptionEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String appointmentId) getAll,
-    required TResult Function(PrescriptionInputs inputs) add,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String appointmentId)? getAll,
-    TResult? Function(PrescriptionInputs inputs)? add,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String appointmentId)? getAll,
-    TResult Function(PrescriptionInputs inputs)? add,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetAll value) getAll,
-    required TResult Function(_Add value) add,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetAll value)? getAll,
-    TResult? Function(_Add value)? add,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetAll value)? getAll,
-    TResult Function(_Add value)? add,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PrescriptionEventCopyWith<$Res> {
-  factory $PrescriptionEventCopyWith(
-          PrescriptionEvent value, $Res Function(PrescriptionEvent) then) =
-      _$PrescriptionEventCopyWithImpl<$Res, PrescriptionEvent>;
-}
-
-/// @nodoc
-class _$PrescriptionEventCopyWithImpl<$Res, $Val extends PrescriptionEvent>
-    implements $PrescriptionEventCopyWith<$Res> {
-  _$PrescriptionEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$GetAllImplCopyWith<$Res> {
-  factory _$$GetAllImplCopyWith(
-          _$GetAllImpl value, $Res Function(_$GetAllImpl) then) =
-      __$$GetAllImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String appointmentId});
-}
-
-/// @nodoc
-class __$$GetAllImplCopyWithImpl<$Res>
-    extends _$PrescriptionEventCopyWithImpl<$Res, _$GetAllImpl>
-    implements _$$GetAllImplCopyWith<$Res> {
-  __$$GetAllImplCopyWithImpl(
-      _$GetAllImpl _value, $Res Function(_$GetAllImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? appointmentId = null,
-  }) {
-    return _then(_$GetAllImpl(
-      appointmentId: null == appointmentId
-          ? _value.appointmentId
-          : appointmentId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetAllImpl implements _GetAll {
-  const _$GetAllImpl({required this.appointmentId});
-
-  @override
-  final String appointmentId;
-
-  @override
-  String toString() {
-    return 'PrescriptionEvent.getAll(appointmentId: $appointmentId)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAllImpl &&
-            (identical(other.appointmentId, appointmentId) ||
-                other.appointmentId == appointmentId));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, appointmentId);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetAllImplCopyWith<_$GetAllImpl> get copyWith =>
-      __$$GetAllImplCopyWithImpl<_$GetAllImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String appointmentId) getAll,
-    required TResult Function(PrescriptionInputs inputs) add,
-  }) {
-    return getAll(appointmentId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String appointmentId)? getAll,
-    TResult? Function(PrescriptionInputs inputs)? add,
-  }) {
-    return getAll?.call(appointmentId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String appointmentId)? getAll,
-    TResult Function(PrescriptionInputs inputs)? add,
-    required TResult orElse(),
-  }) {
-    if (getAll != null) {
-      return getAll(appointmentId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetAll value) getAll,
-    required TResult Function(_Add value) add,
-  }) {
-    return getAll(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetAll value)? getAll,
-    TResult? Function(_Add value)? add,
-  }) {
-    return getAll?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetAll value)? getAll,
-    TResult Function(_Add value)? add,
-    required TResult orElse(),
-  }) {
-    if (getAll != null) {
-      return getAll(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetAll implements PrescriptionEvent {
-  const factory _GetAll({required final String appointmentId}) = _$GetAllImpl;
-
-  String get appointmentId;
-  @JsonKey(ignore: true)
-  _$$GetAllImplCopyWith<_$GetAllImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$AddImplCopyWith<$Res> {
-  factory _$$AddImplCopyWith(_$AddImpl value, $Res Function(_$AddImpl) then) =
-      __$$AddImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({PrescriptionInputs inputs});
-}
-
-/// @nodoc
-class __$$AddImplCopyWithImpl<$Res>
-    extends _$PrescriptionEventCopyWithImpl<$Res, _$AddImpl>
-    implements _$$AddImplCopyWith<$Res> {
-  __$$AddImplCopyWithImpl(_$AddImpl _value, $Res Function(_$AddImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? inputs = null,
-  }) {
-    return _then(_$AddImpl(
-      inputs: null == inputs
-          ? _value.inputs
-          : inputs // ignore: cast_nullable_to_non_nullable
-              as PrescriptionInputs,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$AddImpl implements _Add {
-  const _$AddImpl({required this.inputs});
-
-  @override
-  final PrescriptionInputs inputs;
-
-  @override
-  String toString() {
-    return 'PrescriptionEvent.add(inputs: $inputs)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddImpl &&
-            (identical(other.inputs, inputs) || other.inputs == inputs));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, inputs);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AddImplCopyWith<_$AddImpl> get copyWith =>
-      __$$AddImplCopyWithImpl<_$AddImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String appointmentId) getAll,
-    required TResult Function(PrescriptionInputs inputs) add,
-  }) {
-    return add(inputs);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String appointmentId)? getAll,
-    TResult? Function(PrescriptionInputs inputs)? add,
-  }) {
-    return add?.call(inputs);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String appointmentId)? getAll,
-    TResult Function(PrescriptionInputs inputs)? add,
-    required TResult orElse(),
-  }) {
-    if (add != null) {
-      return add(inputs);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetAll value) getAll,
-    required TResult Function(_Add value) add,
-  }) {
-    return add(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetAll value)? getAll,
-    TResult? Function(_Add value)? add,
-  }) {
-    return add?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetAll value)? getAll,
-    TResult Function(_Add value)? add,
-    required TResult orElse(),
-  }) {
-    if (add != null) {
-      return add(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Add implements PrescriptionEvent {
-  const factory _Add({required final PrescriptionInputs inputs}) = _$AddImpl;
-
-  PrescriptionInputs get inputs;
-  @JsonKey(ignore: true)
-  _$$AddImplCopyWith<_$AddImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

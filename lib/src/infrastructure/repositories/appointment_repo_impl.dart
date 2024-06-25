@@ -1,9 +1,5 @@
+import 'package:clinic_package/clinic_package.dart';
 import 'package:dartz/dartz.dart';
-
-import '../../core/network/failure.dart';
-import '../../domain/entities/appointment_entity.dart';
-import '../../domain/repos/appointment_repo.dart';
-import '../data_source/abstractions/appointment_data_source.dart';
 
 class AppointmentRepoImpl implements AppointmentRepo {
   final AppointmentDataSource _appointmentDataSource;
@@ -20,6 +16,19 @@ class AppointmentRepoImpl implements AppointmentRepo {
       return response["isSuccess"]
           ? const Right(true)
           : Left(ServerFailure(response['errors'][0]));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, ChangeAppointmentStatusEntity>>
+      changeStatusAppointment({required String appointmentId}) async {
+    try {
+      final response = await _appointmentDataSource
+          .changeStatusAppointmentAppointment(appointmentId: appointmentId);
+
+      return Right(ChangeAppointmentStatusEntity.fromJson(response));
     } catch (e) {
       return Left(ServerFailure(e.toString()));
     }

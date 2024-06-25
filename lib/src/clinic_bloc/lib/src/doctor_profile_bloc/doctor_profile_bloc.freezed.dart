@@ -398,7 +398,7 @@ mixin _$DoctorProfileState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DoctorEntity? doctorData, bool isUpdated) success,
+    required TResult Function(Doctor? doctorData, bool isUpdated) success,
     required TResult Function(String message) failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -406,7 +406,7 @@ mixin _$DoctorProfileState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DoctorEntity? doctorData, bool isUpdated)? success,
+    TResult? Function(Doctor? doctorData, bool isUpdated)? success,
     TResult? Function(String message)? failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -414,7 +414,7 @@ mixin _$DoctorProfileState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DoctorEntity? doctorData, bool isUpdated)? success,
+    TResult Function(Doctor? doctorData, bool isUpdated)? success,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) =>
@@ -504,7 +504,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DoctorEntity? doctorData, bool isUpdated) success,
+    required TResult Function(Doctor? doctorData, bool isUpdated) success,
     required TResult Function(String message) failed,
   }) {
     return initial();
@@ -515,7 +515,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DoctorEntity? doctorData, bool isUpdated)? success,
+    TResult? Function(Doctor? doctorData, bool isUpdated)? success,
     TResult? Function(String message)? failed,
   }) {
     return initial?.call();
@@ -526,7 +526,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DoctorEntity? doctorData, bool isUpdated)? success,
+    TResult Function(Doctor? doctorData, bool isUpdated)? success,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -618,7 +618,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DoctorEntity? doctorData, bool isUpdated) success,
+    required TResult Function(Doctor? doctorData, bool isUpdated) success,
     required TResult Function(String message) failed,
   }) {
     return loading();
@@ -629,7 +629,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DoctorEntity? doctorData, bool isUpdated)? success,
+    TResult? Function(Doctor? doctorData, bool isUpdated)? success,
     TResult? Function(String message)? failed,
   }) {
     return loading?.call();
@@ -640,7 +640,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DoctorEntity? doctorData, bool isUpdated)? success,
+    TResult Function(Doctor? doctorData, bool isUpdated)? success,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -698,7 +698,9 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({DoctorEntity? doctorData, bool isUpdated});
+  $Res call({Doctor? doctorData, bool isUpdated});
+
+  $DoctorCopyWith<$Res>? get doctorData;
 }
 
 /// @nodoc
@@ -719,12 +721,24 @@ class __$$SuccessImplCopyWithImpl<$Res>
       doctorData: freezed == doctorData
           ? _value.doctorData
           : doctorData // ignore: cast_nullable_to_non_nullable
-              as DoctorEntity?,
+              as Doctor?,
       isUpdated: null == isUpdated
           ? _value.isUpdated
           : isUpdated // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DoctorCopyWith<$Res>? get doctorData {
+    if (_value.doctorData == null) {
+      return null;
+    }
+
+    return $DoctorCopyWith<$Res>(_value.doctorData!, (value) {
+      return _then(_value.copyWith(doctorData: value));
+    });
   }
 }
 
@@ -734,7 +748,7 @@ class _$SuccessImpl implements _Success {
   const _$SuccessImpl({this.doctorData, this.isUpdated = false});
 
   @override
-  final DoctorEntity? doctorData;
+  final Doctor? doctorData;
   @override
   @JsonKey()
   final bool isUpdated;
@@ -769,7 +783,7 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DoctorEntity? doctorData, bool isUpdated) success,
+    required TResult Function(Doctor? doctorData, bool isUpdated) success,
     required TResult Function(String message) failed,
   }) {
     return success(doctorData, isUpdated);
@@ -780,7 +794,7 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DoctorEntity? doctorData, bool isUpdated)? success,
+    TResult? Function(Doctor? doctorData, bool isUpdated)? success,
     TResult? Function(String message)? failed,
   }) {
     return success?.call(doctorData, isUpdated);
@@ -791,7 +805,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DoctorEntity? doctorData, bool isUpdated)? success,
+    TResult Function(Doctor? doctorData, bool isUpdated)? success,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -840,10 +854,10 @@ class _$SuccessImpl implements _Success {
 }
 
 abstract class _Success implements DoctorProfileState {
-  const factory _Success(
-      {final DoctorEntity? doctorData, final bool isUpdated}) = _$SuccessImpl;
+  const factory _Success({final Doctor? doctorData, final bool isUpdated}) =
+      _$SuccessImpl;
 
-  DoctorEntity? get doctorData;
+  Doctor? get doctorData;
   bool get isUpdated;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -916,7 +930,7 @@ class _$FailedImpl implements _Failed {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DoctorEntity? doctorData, bool isUpdated) success,
+    required TResult Function(Doctor? doctorData, bool isUpdated) success,
     required TResult Function(String message) failed,
   }) {
     return failed(message);
@@ -927,7 +941,7 @@ class _$FailedImpl implements _Failed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DoctorEntity? doctorData, bool isUpdated)? success,
+    TResult? Function(Doctor? doctorData, bool isUpdated)? success,
     TResult? Function(String message)? failed,
   }) {
     return failed?.call(message);
@@ -938,7 +952,7 @@ class _$FailedImpl implements _Failed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DoctorEntity? doctorData, bool isUpdated)? success,
+    TResult Function(Doctor? doctorData, bool isUpdated)? success,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {

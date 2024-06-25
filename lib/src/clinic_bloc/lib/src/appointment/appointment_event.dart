@@ -7,6 +7,7 @@ class AppointmentEvent with _$AppointmentEvent {
 
   const factory AppointmentEvent.deleteAppointment({required String id}) =
       _DeleteAppointment;
-
+  const factory AppointmentEvent.changeAppointmentStatus({required String appointmentId}) =
+      _ChangeAppointmentStatus;
   const factory AppointmentEvent.getAppointments() = _GetAppointment;
 }

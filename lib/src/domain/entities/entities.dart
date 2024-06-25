@@ -11,3 +11,4 @@ export 'medical_history_entity.dart';
 export 'prescription_entity.dart';
 export 'schedule_entity.dart';
 export 'time_slot_entity.dart';
+export 'change_appointment_status_entity.dart';

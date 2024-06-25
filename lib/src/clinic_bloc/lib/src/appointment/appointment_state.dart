@@ -7,6 +7,8 @@ class AppointmentState with _$AppointmentState {
   factory AppointmentState.success(
       {required List<AppointmentEntity> appointments,
       @Default(false) bool isDeleted,
-      @Default(false) bool isAdded}) = _Success;
+      @Default(false) bool isAdded,
+      @Default(false) bool changedToCompleted}) = _Success;
+
   factory AppointmentState.failed({required String message}) = _Failed;
 }

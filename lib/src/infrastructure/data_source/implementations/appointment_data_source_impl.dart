@@ -45,4 +45,16 @@ class AppointmentDataSourceImpl implements AppointmentDataSource {
       rethrow;
     }
   }
+    @override
+  Future<Map<String, dynamic>> changeStatusAppointmentAppointment({required String appointmentId})async {
+      try {
+      final response =
+          await _dioClient.put("/Appointment/$appointmentId/status/Completed");
+
+      return response.data;
+    } catch (e) {
+      rethrow;
+    }
+  
+  }
 }
