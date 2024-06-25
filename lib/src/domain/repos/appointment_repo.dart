@@ -13,4 +13,5 @@ abstract class AppointmentRepo {
   });
   Future<Either<Failure, ChangeAppointmentStatusEntity>>
       changeStatusAppointment({required String appointmentId});
+
 }

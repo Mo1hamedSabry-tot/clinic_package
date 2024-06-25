@@ -7,6 +7,8 @@ abstract class AppointmentDataSource {
     required String patientId,
     required int scheduleId,
   });
+    Future<Map<String, dynamic>> getAppointmentForDoctor();
+
     Future<Map<String, dynamic>> changeStatusAppointmentAppointment(
       {required String appointmentId});
 }

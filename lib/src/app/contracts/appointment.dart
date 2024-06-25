@@ -9,6 +9,8 @@ import '../core/primitives/inputs/no_params.dart';
 
 abstract class GetAppointmentQuery extends BaseQuery<
     Future<Either<Failure, List<AppointmentEntity>>>, NoParams> {}
+abstract class GetAppointmentForDoctorQuery extends BaseQuery<
+    Future<Either<Failure, List<AppointmentEntity>>>, NoParams> {}
 
 abstract class AddAppointmentCommand
     extends BaseQuery<Future<Either<Failure, bool>>, AppointmentInputs> {}

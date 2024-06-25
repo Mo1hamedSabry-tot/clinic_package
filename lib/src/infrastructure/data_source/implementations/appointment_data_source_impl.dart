@@ -1,5 +1,4 @@
-import '../../../core/dio/base_dio.dart';
-import '../abstractions/appointment_data_source.dart';
+import 'package:clinic_package/clinic_package.dart';
 
 class AppointmentDataSourceImpl implements AppointmentDataSource {
   final BaseDio _dioClient;
@@ -45,9 +44,23 @@ class AppointmentDataSourceImpl implements AppointmentDataSource {
       rethrow;
     }
   }
-    @override
-  Future<Map<String, dynamic>> changeStatusAppointmentAppointment({required String appointmentId})async {
-      try {
+
+  @override
+  Future<Map<String, dynamic>> getAppointmentForDoctor() async {
+    final userId = preferences.getString('userId');
+    try {
+      final response = await _dioClient.get("/Appointment/doctor/$userId");
+
+      return response.data;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<Map<String, dynamic>> changeStatusAppointmentAppointment(
+      {required String appointmentId}) async {
+    try {
       final response =
           await _dioClient.put("/Appointment/$appointmentId/status/Completed");
 
@@ -55,6 +68,5 @@ class AppointmentDataSourceImpl implements AppointmentDataSource {
     } catch (e) {
       rethrow;
     }
-  
   }
 }
