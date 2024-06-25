@@ -8,7 +8,7 @@ abstract class GetDoctorScheduleQuery
     extends BaseQuery<Future<Either<Failure, List<ScheduleEntity>>>, String> {}
 
 abstract class GetSchedulesByDayQuery extends BaseQuery<
-    Future<Either<Failure, List<ScheduleEntity>>>, ScheduleInputss> {}
+    Future<Either<Failure, List<ScheduleEntity>>>, ScheduleInputs> {}
 
 abstract class GetAllScheduleByDotorIdQuery extends BaseQuery<
     Future<Either<Failure, List<ScheduleEntity>>>, NoParams> {}
