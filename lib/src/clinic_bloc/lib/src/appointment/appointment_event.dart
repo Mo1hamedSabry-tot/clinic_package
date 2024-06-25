@@ -10,4 +10,5 @@ class AppointmentEvent with _$AppointmentEvent {
   const factory AppointmentEvent.changeAppointmentStatus({required String appointmentId}) =
       _ChangeAppointmentStatus;
   const factory AppointmentEvent.getAppointments() = _GetAppointment;
+  const factory AppointmentEvent.getAppointmentsForDoctor() = _GetAppointmentForDoctor;
 }

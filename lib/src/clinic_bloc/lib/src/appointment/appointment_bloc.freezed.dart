@@ -22,6 +22,7 @@ mixin _$AppointmentEvent {
     required TResult Function(String id) deleteAppointment,
     required TResult Function(String appointmentId) changeAppointmentStatus,
     required TResult Function() getAppointments,
+    required TResult Function() getAppointmentsForDoctor,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$AppointmentEvent {
     TResult? Function(String id)? deleteAppointment,
     TResult? Function(String appointmentId)? changeAppointmentStatus,
     TResult? Function()? getAppointments,
+    TResult? Function()? getAppointmentsForDoctor,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$AppointmentEvent {
     TResult Function(String id)? deleteAppointment,
     TResult Function(String appointmentId)? changeAppointmentStatus,
     TResult Function()? getAppointments,
+    TResult Function()? getAppointmentsForDoctor,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +51,8 @@ mixin _$AppointmentEvent {
     required TResult Function(_ChangeAppointmentStatus value)
         changeAppointmentStatus,
     required TResult Function(_GetAppointment value) getAppointments,
+    required TResult Function(_GetAppointmentForDoctor value)
+        getAppointmentsForDoctor,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +61,7 @@ mixin _$AppointmentEvent {
     TResult? Function(_DeleteAppointment value)? deleteAppointment,
     TResult? Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult? Function(_GetAppointment value)? getAppointments,
+    TResult? Function(_GetAppointmentForDoctor value)? getAppointmentsForDoctor,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +70,7 @@ mixin _$AppointmentEvent {
     TResult Function(_DeleteAppointment value)? deleteAppointment,
     TResult Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult Function(_GetAppointment value)? getAppointments,
+    TResult Function(_GetAppointmentForDoctor value)? getAppointmentsForDoctor,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -156,6 +163,7 @@ class _$AddAppointmentImpl implements _AddAppointment {
     required TResult Function(String id) deleteAppointment,
     required TResult Function(String appointmentId) changeAppointmentStatus,
     required TResult Function() getAppointments,
+    required TResult Function() getAppointmentsForDoctor,
   }) {
     return addAppointment(inputs);
   }
@@ -167,6 +175,7 @@ class _$AddAppointmentImpl implements _AddAppointment {
     TResult? Function(String id)? deleteAppointment,
     TResult? Function(String appointmentId)? changeAppointmentStatus,
     TResult? Function()? getAppointments,
+    TResult? Function()? getAppointmentsForDoctor,
   }) {
     return addAppointment?.call(inputs);
   }
@@ -178,6 +187,7 @@ class _$AddAppointmentImpl implements _AddAppointment {
     TResult Function(String id)? deleteAppointment,
     TResult Function(String appointmentId)? changeAppointmentStatus,
     TResult Function()? getAppointments,
+    TResult Function()? getAppointmentsForDoctor,
     required TResult orElse(),
   }) {
     if (addAppointment != null) {
@@ -194,6 +204,8 @@ class _$AddAppointmentImpl implements _AddAppointment {
     required TResult Function(_ChangeAppointmentStatus value)
         changeAppointmentStatus,
     required TResult Function(_GetAppointment value) getAppointments,
+    required TResult Function(_GetAppointmentForDoctor value)
+        getAppointmentsForDoctor,
   }) {
     return addAppointment(this);
   }
@@ -205,6 +217,7 @@ class _$AddAppointmentImpl implements _AddAppointment {
     TResult? Function(_DeleteAppointment value)? deleteAppointment,
     TResult? Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult? Function(_GetAppointment value)? getAppointments,
+    TResult? Function(_GetAppointmentForDoctor value)? getAppointmentsForDoctor,
   }) {
     return addAppointment?.call(this);
   }
@@ -216,6 +229,7 @@ class _$AddAppointmentImpl implements _AddAppointment {
     TResult Function(_DeleteAppointment value)? deleteAppointment,
     TResult Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult Function(_GetAppointment value)? getAppointments,
+    TResult Function(_GetAppointmentForDoctor value)? getAppointmentsForDoctor,
     required TResult orElse(),
   }) {
     if (addAppointment != null) {
@@ -304,6 +318,7 @@ class _$DeleteAppointmentImpl implements _DeleteAppointment {
     required TResult Function(String id) deleteAppointment,
     required TResult Function(String appointmentId) changeAppointmentStatus,
     required TResult Function() getAppointments,
+    required TResult Function() getAppointmentsForDoctor,
   }) {
     return deleteAppointment(id);
   }
@@ -315,6 +330,7 @@ class _$DeleteAppointmentImpl implements _DeleteAppointment {
     TResult? Function(String id)? deleteAppointment,
     TResult? Function(String appointmentId)? changeAppointmentStatus,
     TResult? Function()? getAppointments,
+    TResult? Function()? getAppointmentsForDoctor,
   }) {
     return deleteAppointment?.call(id);
   }
@@ -326,6 +342,7 @@ class _$DeleteAppointmentImpl implements _DeleteAppointment {
     TResult Function(String id)? deleteAppointment,
     TResult Function(String appointmentId)? changeAppointmentStatus,
     TResult Function()? getAppointments,
+    TResult Function()? getAppointmentsForDoctor,
     required TResult orElse(),
   }) {
     if (deleteAppointment != null) {
@@ -342,6 +359,8 @@ class _$DeleteAppointmentImpl implements _DeleteAppointment {
     required TResult Function(_ChangeAppointmentStatus value)
         changeAppointmentStatus,
     required TResult Function(_GetAppointment value) getAppointments,
+    required TResult Function(_GetAppointmentForDoctor value)
+        getAppointmentsForDoctor,
   }) {
     return deleteAppointment(this);
   }
@@ -353,6 +372,7 @@ class _$DeleteAppointmentImpl implements _DeleteAppointment {
     TResult? Function(_DeleteAppointment value)? deleteAppointment,
     TResult? Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult? Function(_GetAppointment value)? getAppointments,
+    TResult? Function(_GetAppointmentForDoctor value)? getAppointmentsForDoctor,
   }) {
     return deleteAppointment?.call(this);
   }
@@ -364,6 +384,7 @@ class _$DeleteAppointmentImpl implements _DeleteAppointment {
     TResult Function(_DeleteAppointment value)? deleteAppointment,
     TResult Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult Function(_GetAppointment value)? getAppointments,
+    TResult Function(_GetAppointmentForDoctor value)? getAppointmentsForDoctor,
     required TResult orElse(),
   }) {
     if (deleteAppointment != null) {
@@ -455,6 +476,7 @@ class _$ChangeAppointmentStatusImpl implements _ChangeAppointmentStatus {
     required TResult Function(String id) deleteAppointment,
     required TResult Function(String appointmentId) changeAppointmentStatus,
     required TResult Function() getAppointments,
+    required TResult Function() getAppointmentsForDoctor,
   }) {
     return changeAppointmentStatus(appointmentId);
   }
@@ -466,6 +488,7 @@ class _$ChangeAppointmentStatusImpl implements _ChangeAppointmentStatus {
     TResult? Function(String id)? deleteAppointment,
     TResult? Function(String appointmentId)? changeAppointmentStatus,
     TResult? Function()? getAppointments,
+    TResult? Function()? getAppointmentsForDoctor,
   }) {
     return changeAppointmentStatus?.call(appointmentId);
   }
@@ -477,6 +500,7 @@ class _$ChangeAppointmentStatusImpl implements _ChangeAppointmentStatus {
     TResult Function(String id)? deleteAppointment,
     TResult Function(String appointmentId)? changeAppointmentStatus,
     TResult Function()? getAppointments,
+    TResult Function()? getAppointmentsForDoctor,
     required TResult orElse(),
   }) {
     if (changeAppointmentStatus != null) {
@@ -493,6 +517,8 @@ class _$ChangeAppointmentStatusImpl implements _ChangeAppointmentStatus {
     required TResult Function(_ChangeAppointmentStatus value)
         changeAppointmentStatus,
     required TResult Function(_GetAppointment value) getAppointments,
+    required TResult Function(_GetAppointmentForDoctor value)
+        getAppointmentsForDoctor,
   }) {
     return changeAppointmentStatus(this);
   }
@@ -504,6 +530,7 @@ class _$ChangeAppointmentStatusImpl implements _ChangeAppointmentStatus {
     TResult? Function(_DeleteAppointment value)? deleteAppointment,
     TResult? Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult? Function(_GetAppointment value)? getAppointments,
+    TResult? Function(_GetAppointmentForDoctor value)? getAppointmentsForDoctor,
   }) {
     return changeAppointmentStatus?.call(this);
   }
@@ -515,6 +542,7 @@ class _$ChangeAppointmentStatusImpl implements _ChangeAppointmentStatus {
     TResult Function(_DeleteAppointment value)? deleteAppointment,
     TResult Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult Function(_GetAppointment value)? getAppointments,
+    TResult Function(_GetAppointmentForDoctor value)? getAppointmentsForDoctor,
     required TResult orElse(),
   }) {
     if (changeAppointmentStatus != null) {
@@ -576,6 +604,7 @@ class _$GetAppointmentImpl implements _GetAppointment {
     required TResult Function(String id) deleteAppointment,
     required TResult Function(String appointmentId) changeAppointmentStatus,
     required TResult Function() getAppointments,
+    required TResult Function() getAppointmentsForDoctor,
   }) {
     return getAppointments();
   }
@@ -587,6 +616,7 @@ class _$GetAppointmentImpl implements _GetAppointment {
     TResult? Function(String id)? deleteAppointment,
     TResult? Function(String appointmentId)? changeAppointmentStatus,
     TResult? Function()? getAppointments,
+    TResult? Function()? getAppointmentsForDoctor,
   }) {
     return getAppointments?.call();
   }
@@ -598,6 +628,7 @@ class _$GetAppointmentImpl implements _GetAppointment {
     TResult Function(String id)? deleteAppointment,
     TResult Function(String appointmentId)? changeAppointmentStatus,
     TResult Function()? getAppointments,
+    TResult Function()? getAppointmentsForDoctor,
     required TResult orElse(),
   }) {
     if (getAppointments != null) {
@@ -614,6 +645,8 @@ class _$GetAppointmentImpl implements _GetAppointment {
     required TResult Function(_ChangeAppointmentStatus value)
         changeAppointmentStatus,
     required TResult Function(_GetAppointment value) getAppointments,
+    required TResult Function(_GetAppointmentForDoctor value)
+        getAppointmentsForDoctor,
   }) {
     return getAppointments(this);
   }
@@ -625,6 +658,7 @@ class _$GetAppointmentImpl implements _GetAppointment {
     TResult? Function(_DeleteAppointment value)? deleteAppointment,
     TResult? Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult? Function(_GetAppointment value)? getAppointments,
+    TResult? Function(_GetAppointmentForDoctor value)? getAppointmentsForDoctor,
   }) {
     return getAppointments?.call(this);
   }
@@ -636,6 +670,7 @@ class _$GetAppointmentImpl implements _GetAppointment {
     TResult Function(_DeleteAppointment value)? deleteAppointment,
     TResult Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult Function(_GetAppointment value)? getAppointments,
+    TResult Function(_GetAppointmentForDoctor value)? getAppointmentsForDoctor,
     required TResult orElse(),
   }) {
     if (getAppointments != null) {
@@ -647,6 +682,131 @@ class _$GetAppointmentImpl implements _GetAppointment {
 
 abstract class _GetAppointment implements AppointmentEvent {
   const factory _GetAppointment() = _$GetAppointmentImpl;
+}
+
+/// @nodoc
+abstract class _$$GetAppointmentForDoctorImplCopyWith<$Res> {
+  factory _$$GetAppointmentForDoctorImplCopyWith(
+          _$GetAppointmentForDoctorImpl value,
+          $Res Function(_$GetAppointmentForDoctorImpl) then) =
+      __$$GetAppointmentForDoctorImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetAppointmentForDoctorImplCopyWithImpl<$Res>
+    extends _$AppointmentEventCopyWithImpl<$Res, _$GetAppointmentForDoctorImpl>
+    implements _$$GetAppointmentForDoctorImplCopyWith<$Res> {
+  __$$GetAppointmentForDoctorImplCopyWithImpl(
+      _$GetAppointmentForDoctorImpl _value,
+      $Res Function(_$GetAppointmentForDoctorImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetAppointmentForDoctorImpl implements _GetAppointmentForDoctor {
+  const _$GetAppointmentForDoctorImpl();
+
+  @override
+  String toString() {
+    return 'AppointmentEvent.getAppointmentsForDoctor()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAppointmentForDoctorImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AppointmentInputs inputs) addAppointment,
+    required TResult Function(String id) deleteAppointment,
+    required TResult Function(String appointmentId) changeAppointmentStatus,
+    required TResult Function() getAppointments,
+    required TResult Function() getAppointmentsForDoctor,
+  }) {
+    return getAppointmentsForDoctor();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AppointmentInputs inputs)? addAppointment,
+    TResult? Function(String id)? deleteAppointment,
+    TResult? Function(String appointmentId)? changeAppointmentStatus,
+    TResult? Function()? getAppointments,
+    TResult? Function()? getAppointmentsForDoctor,
+  }) {
+    return getAppointmentsForDoctor?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AppointmentInputs inputs)? addAppointment,
+    TResult Function(String id)? deleteAppointment,
+    TResult Function(String appointmentId)? changeAppointmentStatus,
+    TResult Function()? getAppointments,
+    TResult Function()? getAppointmentsForDoctor,
+    required TResult orElse(),
+  }) {
+    if (getAppointmentsForDoctor != null) {
+      return getAppointmentsForDoctor();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AddAppointment value) addAppointment,
+    required TResult Function(_DeleteAppointment value) deleteAppointment,
+    required TResult Function(_ChangeAppointmentStatus value)
+        changeAppointmentStatus,
+    required TResult Function(_GetAppointment value) getAppointments,
+    required TResult Function(_GetAppointmentForDoctor value)
+        getAppointmentsForDoctor,
+  }) {
+    return getAppointmentsForDoctor(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AddAppointment value)? addAppointment,
+    TResult? Function(_DeleteAppointment value)? deleteAppointment,
+    TResult? Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
+    TResult? Function(_GetAppointment value)? getAppointments,
+    TResult? Function(_GetAppointmentForDoctor value)? getAppointmentsForDoctor,
+  }) {
+    return getAppointmentsForDoctor?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AddAppointment value)? addAppointment,
+    TResult Function(_DeleteAppointment value)? deleteAppointment,
+    TResult Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
+    TResult Function(_GetAppointment value)? getAppointments,
+    TResult Function(_GetAppointmentForDoctor value)? getAppointmentsForDoctor,
+    required TResult orElse(),
+  }) {
+    if (getAppointmentsForDoctor != null) {
+      return getAppointmentsForDoctor(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetAppointmentForDoctor implements AppointmentEvent {
+  const factory _GetAppointmentForDoctor() = _$GetAppointmentForDoctorImpl;
 }
 
 /// @nodoc

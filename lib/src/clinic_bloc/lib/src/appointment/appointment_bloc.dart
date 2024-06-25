@@ -12,22 +12,26 @@ class AppointmentBloc extends Bloc<AppointmentEvent, AppointmentState> {
   final AddAppointmentCommand _addAppointmentCommand;
   final DeleteAppointmentCommand _deleteAppointmentCommand;
   final GetAppointmentQuery _getAppointmentQuery;
+  final GetAppointmentForDoctorQuery _getAppointmentForDoctorQuery;
   final ChangeStatusAppointmentCommand _changeStatusAppointmentCommand;
 
   AppointmentBloc(
       {required AddAppointmentCommand addAppointmentCommand,
       required DeleteAppointmentCommand deleteAppointmentCommand,
       required GetAppointmentQuery getAppointmentQuery,
+      required GetAppointmentForDoctorQuery getAppointmentForDoctorQuery,
       required ChangeStatusAppointmentCommand changeStatusAppointmentCommand})
       : _getAppointmentQuery = getAppointmentQuery,
         _deleteAppointmentCommand = deleteAppointmentCommand,
         _addAppointmentCommand = addAppointmentCommand,
+        _getAppointmentForDoctorQuery = getAppointmentForDoctorQuery,
         _changeStatusAppointmentCommand = changeStatusAppointmentCommand,
         super(_Loading()) {
     on<_AddAppointment>(_addAppointmentHandler);
     on<_DeleteAppointment>(_deleteAppointmentHandler);
     on<_GetAppointment>(_getAppointmentHandler);
     on<_ChangeAppointmentStatus>(_changeStatusAppointmentHandler);
+    on<_GetAppointmentForDoctor>(_getAppointmentForDoctorQueryHandler);
   }
 
   FutureOr<void> _addAppointmentHandler(
@@ -66,11 +70,23 @@ class AppointmentBloc extends Bloc<AppointmentEvent, AppointmentState> {
 
   FutureOr<void> _changeStatusAppointmentHandler(
       _ChangeAppointmentStatus event, Emitter<AppointmentState> emit) async {
-    final result = await _changeStatusAppointmentCommand.call(event.appointmentId);
+    final result =
+        await _changeStatusAppointmentCommand.call(event.appointmentId);
     result.fold(
         (l) => emit(_Failed(message: l.message)),
         (r) => state.mapOrNull(
-            success: (success) => emit(success.copyWith(changedToCompleted: true))));
+            success: (success) =>
+                emit(success.copyWith(changedToCompleted: true))));
   }
 
+  FutureOr<void> _getAppointmentForDoctorQueryHandler(
+    _GetAppointmentForDoctor event,
+    Emitter<AppointmentState> emit,
+  ) async {
+      final result = await _getAppointmentQuery.call(NoParams());
+    result.fold(
+        (l) => emit(_Failed(message: l.message)),
+        (r) => emit(
+            _Success(appointments: r, isAdded: false, isDeleted: false)));
+  }
 }
