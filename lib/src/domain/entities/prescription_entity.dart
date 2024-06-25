@@ -1,49 +1,31 @@
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class PrescriptionEntity with EquatableMixin {
-  int? id;
-  String? name;
-  String? description;
-  String? date;
-  String? patientName;
-  String? doctorName;
-  List<String>? medicines;
-  int? appointmentId;
+part 'prescription_entity.freezed.dart';
+part 'prescription_entity.g.dart';
 
-  PrescriptionEntity({
-    this.id,
-    this.name,
-    this.description,
-    this.date,
-    this.patientName,
-    this.doctorName,
-    this.medicines,
-    this.appointmentId,
-  });
+@freezed
+class ValidationError with _$ValidationError {
+  factory ValidationError({
+    String? identifier,
+    String? errorMessage,
+    String? errorCode,
+    int? severity,
+  }) = _ValidationError;
 
-  @override
-  List<Object?> get props => [
-        id,
-        name,
-        description,
-        date,
-        patientName,
-        doctorName,
-        medicines,
-        appointmentId
-      ];
+  factory ValidationError.fromJson(Map<String, dynamic> json) => _$ValidationErrorFromJson(json);
+}
 
-  factory PrescriptionEntity.fromJson(Map<String, dynamic> json) {
-    return PrescriptionEntity(
-      id: json['id'] as int,
-      name: json['name'] as String,
-      description: json['description'] as String,
-      date: json['date'] as String,
-      patientName: json['patientName'] as String,
-      doctorName: json['doctorName'] as String,
-      medicines:
-          (json['medicine'] as List<dynamic>).map((e) => e as String).toList(),
-      appointmentId: json['appointmentId'] as int,
-    );
-  }
+@freezed
+class PrescriptionEntity with _$PrescriptionEntity {
+  factory PrescriptionEntity({
+    Object? value,
+    int? status,
+    bool? isSuccess,
+    String? successMessage,
+    String? correlationId,
+    List<String>? errors,
+    List<ValidationError>? validationErrors,
+  }) = _PrescriptionEntity;
+
+  factory PrescriptionEntity.fromJson(Map<String, dynamic> json) => _$PrescriptionEntityFromJson(json);
 }

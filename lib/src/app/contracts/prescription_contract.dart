@@ -9,4 +9,4 @@ abstract class GetPrescription
     extends BaseQuery<Future<Either<Failure, PrescriptionEntity>>, String> {}
 
 abstract class AddPrescription
-    extends BaseQuery<Future<Either<Failure, bool>>, PrescriptionInputs> {}
+    extends BaseQuery<Future<Either<Failure, PrescriptionEntity>>, PrescriptionInputs> {}

@@ -7,5 +7,6 @@ class PrescriptionState with _$PrescriptionState {
   const factory PrescriptionState.success(
       {required PrescriptionEntity prescription,
       @Default(false) bool added}) = _Success;
-  const factory PrescriptionState.failure(String message) = _Failure;
+  const factory PrescriptionState.failure({required String message,
+   @Default(false) bool? hasPreviousPrescription}) = _Failure;
 }

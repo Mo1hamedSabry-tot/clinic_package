@@ -20,18 +20,18 @@ class PrescriptionBloc extends Bloc<PrescriptionEvent, PrescriptionState> {
   FutureOr<void> _handleAddPrescription(
       _Add event, Emitter<PrescriptionState> emit) async {
     final result = await _addPrescriptionQuery(event.inputs);
-    result.fold((l) => emit(PrescriptionState.failure(l.message)), (r) async {
+    result.fold((l) => emit(PrescriptionState.failure(message:l.message)), (r) async {
       r
           ? emit(PrescriptionState.success(
               prescription: PrescriptionEntity(), added: r))
-          : emit(const PrescriptionState.failure("Something went wrong"));
+          : emit(const PrescriptionState.failure(message: "Something went wrong"));
     });
   }
 
   FutureOr<void> _handleGetAllPrescription(
       _GetAll event, Emitter<PrescriptionState> emit) async {
     final result = await _getPrescriptionQuery(event.appointmentId);
-    result.fold((l) => emit(PrescriptionState.failure(l.message)),
+    result.fold((l) => emit(PrescriptionState.failure(message:l.message)),
         (r) async => emit(PrescriptionState.success(prescription: r)));
   }
 }

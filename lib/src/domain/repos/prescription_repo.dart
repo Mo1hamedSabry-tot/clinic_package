@@ -4,7 +4,7 @@ import '../../core/network/failure.dart';
 import '../entities/prescription_entity.dart';
 
 abstract class PrescriptionRepo {
-  Future<Either<Failure, bool>> addPrescription({
+  Future<Either<Failure, PrescriptionEntity>> addPrescription({
     required String patientId,
     required String doctorId,
     required String description,

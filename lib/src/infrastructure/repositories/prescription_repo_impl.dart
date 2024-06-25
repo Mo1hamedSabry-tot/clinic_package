@@ -9,7 +9,7 @@ class PrescriptionRepoImpl implements PrescriptionRepo {
   final PrescriptionDataSource prescriptionDataSource;
   PrescriptionRepoImpl({required this.prescriptionDataSource});
   @override
-  Future<Either<Failure, bool>> addPrescription(
+  Future<Either<Failure, PrescriptionEntity>> addPrescription(
       {required String patientId,
       required String doctorId,
       required String description,
@@ -18,7 +18,7 @@ class PrescriptionRepoImpl implements PrescriptionRepo {
       required String dateTime,
       required List<String> medicines}) async {
     try {
-      final response = await prescriptionDataSource.addPrescription(
+   final response = await prescriptionDataSource.addPrescription(
           patientId: patientId,
           doctorId: doctorId,
           description: description,
@@ -26,9 +26,13 @@ class PrescriptionRepoImpl implements PrescriptionRepo {
           appointmentId: appointmentId,
           dateTime: dateTime,
           medicines: medicines);
-
-      return Right(response['isSuccess'] as bool);
-    } catch (e) {
+      final model = PrescriptionEntity.fromJson(response);
+      if (model.validationErrors?.isNotEmpty == true && model.validationErrors?[0].errorMessage ==
+          "Appointment already has prescription") {
+        return Left(ServerFailure(model.validationErrors?[0].errorMessage ?? ""));
+      } else {
+        return Right(model);
+      } } catch (e) {
       return Left(ServerFailure(e.toString()));
     }
   }

@@ -6,24 +6,6 @@ part of 'change_appointment_status_entity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ValidationErrorImpl _$$ValidationErrorImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ValidationErrorImpl(
-      identifier: json['identifier'] as String?,
-      errorMessage: json['errorMessage'] as String?,
-      errorCode: json['errorCode'] as String?,
-      severity: (json['severity'] as num?)?.toInt(),
-    );
-
-Map<String, dynamic> _$$ValidationErrorImplToJson(
-        _$ValidationErrorImpl instance) =>
-    <String, dynamic>{
-      'identifier': instance.identifier,
-      'errorMessage': instance.errorMessage,
-      'errorCode': instance.errorCode,
-      'severity': instance.severity,
-    };
-
 _$ChangeAppointmentStatusEntityImpl
     _$$ChangeAppointmentStatusEntityImplFromJson(Map<String, dynamic> json) =>
         _$ChangeAppointmentStatusEntityImpl(

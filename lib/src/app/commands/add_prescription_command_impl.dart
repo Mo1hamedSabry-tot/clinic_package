@@ -1,16 +1,12 @@
-import 'package:clinic_package/src/core/network/failure.dart';
+import 'package:clinic_package/clinic_package.dart';
 import 'package:dartz/dartz.dart';
-
-import '../../domain/repos/prescription_repo.dart';
-import '../contracts/prescription_contract.dart';
-import '../core/primitives/inputs/prescription_inputs.dart';
 
 class AddPrescriptionCommandImpl implements AddPrescription {
   final PrescriptionRepo _prescriptionRepo;
   AddPrescriptionCommandImpl({required PrescriptionRepo prescriptionRepo})
       : _prescriptionRepo = prescriptionRepo;
   @override
-  Future<Either<Failure, bool>> call(PrescriptionInputs params) {
+  Future<Either<Failure, PrescriptionEntity>> call(PrescriptionInputs params) {
     return _prescriptionRepo.addPrescription(
         patientId: params.patientId,
         doctorId: params.doctorId,

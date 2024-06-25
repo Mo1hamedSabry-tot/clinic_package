@@ -347,7 +347,8 @@ mixin _$PrescriptionState {
     required TResult Function() loadInProgress,
     required TResult Function(PrescriptionEntity prescription, bool added)
         success,
-    required TResult Function(String message) failure,
+    required TResult Function(String message, bool? hasPreviousPrescription)
+        failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -355,7 +356,7 @@ mixin _$PrescriptionState {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(PrescriptionEntity prescription, bool added)? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(String message, bool? hasPreviousPrescription)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -363,7 +364,7 @@ mixin _$PrescriptionState {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(PrescriptionEntity prescription, bool added)? success,
-    TResult Function(String message)? failure,
+    TResult Function(String message, bool? hasPreviousPrescription)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -454,7 +455,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loadInProgress,
     required TResult Function(PrescriptionEntity prescription, bool added)
         success,
-    required TResult Function(String message) failure,
+    required TResult Function(String message, bool? hasPreviousPrescription)
+        failure,
   }) {
     return initial();
   }
@@ -465,7 +467,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(PrescriptionEntity prescription, bool added)? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(String message, bool? hasPreviousPrescription)? failure,
   }) {
     return initial?.call();
   }
@@ -476,7 +478,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(PrescriptionEntity prescription, bool added)? success,
-    TResult Function(String message)? failure,
+    TResult Function(String message, bool? hasPreviousPrescription)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -569,7 +571,8 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     required TResult Function() loadInProgress,
     required TResult Function(PrescriptionEntity prescription, bool added)
         success,
-    required TResult Function(String message) failure,
+    required TResult Function(String message, bool? hasPreviousPrescription)
+        failure,
   }) {
     return loadInProgress();
   }
@@ -580,7 +583,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(PrescriptionEntity prescription, bool added)? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(String message, bool? hasPreviousPrescription)? failure,
   }) {
     return loadInProgress?.call();
   }
@@ -591,7 +594,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(PrescriptionEntity prescription, bool added)? success,
-    TResult Function(String message)? failure,
+    TResult Function(String message, bool? hasPreviousPrescription)? failure,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -649,6 +652,8 @@ abstract class _$$SuccessImplCopyWith<$Res> {
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({PrescriptionEntity prescription, bool added});
+
+  $PrescriptionEntityCopyWith<$Res> get prescription;
 }
 
 /// @nodoc
@@ -675,6 +680,14 @@ class __$$SuccessImplCopyWithImpl<$Res>
           : added // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PrescriptionEntityCopyWith<$Res> get prescription {
+    return $PrescriptionEntityCopyWith<$Res>(_value.prescription, (value) {
+      return _then(_value.copyWith(prescription: value));
+    });
   }
 }
 
@@ -720,7 +733,8 @@ class _$SuccessImpl implements _Success {
     required TResult Function() loadInProgress,
     required TResult Function(PrescriptionEntity prescription, bool added)
         success,
-    required TResult Function(String message) failure,
+    required TResult Function(String message, bool? hasPreviousPrescription)
+        failure,
   }) {
     return success(prescription, added);
   }
@@ -731,7 +745,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(PrescriptionEntity prescription, bool added)? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(String message, bool? hasPreviousPrescription)? failure,
   }) {
     return success?.call(prescription, added);
   }
@@ -742,7 +756,7 @@ class _$SuccessImpl implements _Success {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(PrescriptionEntity prescription, bool added)? success,
-    TResult Function(String message)? failure,
+    TResult Function(String message, bool? hasPreviousPrescription)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -807,7 +821,7 @@ abstract class _$$FailureImplCopyWith<$Res> {
           _$FailureImpl value, $Res Function(_$FailureImpl) then) =
       __$$FailureImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String message});
+  $Res call({String message, bool? hasPreviousPrescription});
 }
 
 /// @nodoc
@@ -822,12 +836,17 @@ class __$$FailureImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? hasPreviousPrescription = freezed,
   }) {
     return _then(_$FailureImpl(
-      null == message
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
+      hasPreviousPrescription: freezed == hasPreviousPrescription
+          ? _value.hasPreviousPrescription
+          : hasPreviousPrescription // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -835,14 +854,18 @@ class __$$FailureImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FailureImpl implements _Failure {
-  const _$FailureImpl(this.message);
+  const _$FailureImpl(
+      {required this.message, this.hasPreviousPrescription = false});
 
   @override
   final String message;
+  @override
+  @JsonKey()
+  final bool? hasPreviousPrescription;
 
   @override
   String toString() {
-    return 'PrescriptionState.failure(message: $message)';
+    return 'PrescriptionState.failure(message: $message, hasPreviousPrescription: $hasPreviousPrescription)';
   }
 
   @override
@@ -850,11 +873,15 @@ class _$FailureImpl implements _Failure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FailureImpl &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(
+                    other.hasPreviousPrescription, hasPreviousPrescription) ||
+                other.hasPreviousPrescription == hasPreviousPrescription));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode =>
+      Object.hash(runtimeType, message, hasPreviousPrescription);
 
   @JsonKey(ignore: true)
   @override
@@ -869,9 +896,10 @@ class _$FailureImpl implements _Failure {
     required TResult Function() loadInProgress,
     required TResult Function(PrescriptionEntity prescription, bool added)
         success,
-    required TResult Function(String message) failure,
+    required TResult Function(String message, bool? hasPreviousPrescription)
+        failure,
   }) {
-    return failure(message);
+    return failure(message, hasPreviousPrescription);
   }
 
   @override
@@ -880,9 +908,9 @@ class _$FailureImpl implements _Failure {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(PrescriptionEntity prescription, bool added)? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(String message, bool? hasPreviousPrescription)? failure,
   }) {
-    return failure?.call(message);
+    return failure?.call(message, hasPreviousPrescription);
   }
 
   @override
@@ -891,11 +919,11 @@ class _$FailureImpl implements _Failure {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(PrescriptionEntity prescription, bool added)? success,
-    TResult Function(String message)? failure,
+    TResult Function(String message, bool? hasPreviousPrescription)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
-      return failure(message);
+      return failure(message, hasPreviousPrescription);
     }
     return orElse();
   }
@@ -939,9 +967,12 @@ class _$FailureImpl implements _Failure {
 }
 
 abstract class _Failure implements PrescriptionState {
-  const factory _Failure(final String message) = _$FailureImpl;
+  const factory _Failure(
+      {required final String message,
+      final bool? hasPreviousPrescription}) = _$FailureImpl;
 
   String get message;
+  bool? get hasPreviousPrescription;
   @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
