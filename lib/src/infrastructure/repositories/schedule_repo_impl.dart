@@ -34,6 +34,30 @@ class ScheduleRepoImpl implements ScheduleRepo {
   }
 
   @override
+  Future<Either<Failure, bool>> addSchedule({
+    required String doctorId,
+    required int dayOfWeek,
+    required String startTime,
+    required String endTime,
+    required String duration,
+  }) async {
+    try {
+      final response = await _scheduleDataSource.add(
+          doctorId: doctorId,
+          dayOfWeek: dayOfWeek,
+          startTime: startTime,
+          endTime: endTime,
+          duration: duration);
+
+      return response['isSuccess']
+          ? const Right(true)
+          : const Left(ServerFailure("Failed"));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
   Future<Either<Failure, List<ScheduleEntity>>> getSchedulesByDay(
       {required String doctorId, required int dayOfWeek}) async {
     try {

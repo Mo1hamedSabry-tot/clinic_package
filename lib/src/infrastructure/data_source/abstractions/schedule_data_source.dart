@@ -5,4 +5,11 @@ abstract class ScheduleDataSource {
     required int dayOfWeek,
     required String doctorId,
   });
+    Future<Map<String, dynamic>> add({
+    required String doctorId,
+    required int dayOfWeek,
+    required String startTime,
+    required String endTime,
+    required String duration,
+  });
 }

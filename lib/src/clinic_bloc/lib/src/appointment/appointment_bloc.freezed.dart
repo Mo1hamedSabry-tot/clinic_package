@@ -20,6 +20,7 @@ mixin _$AppointmentEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(AppointmentInputs inputs) addAppointment,
     required TResult Function(String id) deleteAppointment,
+    required TResult Function(String appointmentId) changeAppointmentStatus,
     required TResult Function() getAppointments,
   }) =>
       throw _privateConstructorUsedError;
@@ -27,6 +28,7 @@ mixin _$AppointmentEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AppointmentInputs inputs)? addAppointment,
     TResult? Function(String id)? deleteAppointment,
+    TResult? Function(String appointmentId)? changeAppointmentStatus,
     TResult? Function()? getAppointments,
   }) =>
       throw _privateConstructorUsedError;
@@ -34,6 +36,7 @@ mixin _$AppointmentEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppointmentInputs inputs)? addAppointment,
     TResult Function(String id)? deleteAppointment,
+    TResult Function(String appointmentId)? changeAppointmentStatus,
     TResult Function()? getAppointments,
     required TResult orElse(),
   }) =>
@@ -42,6 +45,8 @@ mixin _$AppointmentEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_AddAppointment value) addAppointment,
     required TResult Function(_DeleteAppointment value) deleteAppointment,
+    required TResult Function(_ChangeAppointmentStatus value)
+        changeAppointmentStatus,
     required TResult Function(_GetAppointment value) getAppointments,
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +54,7 @@ mixin _$AppointmentEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AddAppointment value)? addAppointment,
     TResult? Function(_DeleteAppointment value)? deleteAppointment,
+    TResult? Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult? Function(_GetAppointment value)? getAppointments,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +62,7 @@ mixin _$AppointmentEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AddAppointment value)? addAppointment,
     TResult Function(_DeleteAppointment value)? deleteAppointment,
+    TResult Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult Function(_GetAppointment value)? getAppointments,
     required TResult orElse(),
   }) =>
@@ -147,6 +154,7 @@ class _$AddAppointmentImpl implements _AddAppointment {
   TResult when<TResult extends Object?>({
     required TResult Function(AppointmentInputs inputs) addAppointment,
     required TResult Function(String id) deleteAppointment,
+    required TResult Function(String appointmentId) changeAppointmentStatus,
     required TResult Function() getAppointments,
   }) {
     return addAppointment(inputs);
@@ -157,6 +165,7 @@ class _$AddAppointmentImpl implements _AddAppointment {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AppointmentInputs inputs)? addAppointment,
     TResult? Function(String id)? deleteAppointment,
+    TResult? Function(String appointmentId)? changeAppointmentStatus,
     TResult? Function()? getAppointments,
   }) {
     return addAppointment?.call(inputs);
@@ -167,6 +176,7 @@ class _$AddAppointmentImpl implements _AddAppointment {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppointmentInputs inputs)? addAppointment,
     TResult Function(String id)? deleteAppointment,
+    TResult Function(String appointmentId)? changeAppointmentStatus,
     TResult Function()? getAppointments,
     required TResult orElse(),
   }) {
@@ -181,6 +191,8 @@ class _$AddAppointmentImpl implements _AddAppointment {
   TResult map<TResult extends Object?>({
     required TResult Function(_AddAppointment value) addAppointment,
     required TResult Function(_DeleteAppointment value) deleteAppointment,
+    required TResult Function(_ChangeAppointmentStatus value)
+        changeAppointmentStatus,
     required TResult Function(_GetAppointment value) getAppointments,
   }) {
     return addAppointment(this);
@@ -191,6 +203,7 @@ class _$AddAppointmentImpl implements _AddAppointment {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AddAppointment value)? addAppointment,
     TResult? Function(_DeleteAppointment value)? deleteAppointment,
+    TResult? Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult? Function(_GetAppointment value)? getAppointments,
   }) {
     return addAppointment?.call(this);
@@ -201,6 +214,7 @@ class _$AddAppointmentImpl implements _AddAppointment {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AddAppointment value)? addAppointment,
     TResult Function(_DeleteAppointment value)? deleteAppointment,
+    TResult Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult Function(_GetAppointment value)? getAppointments,
     required TResult orElse(),
   }) {
@@ -288,6 +302,7 @@ class _$DeleteAppointmentImpl implements _DeleteAppointment {
   TResult when<TResult extends Object?>({
     required TResult Function(AppointmentInputs inputs) addAppointment,
     required TResult Function(String id) deleteAppointment,
+    required TResult Function(String appointmentId) changeAppointmentStatus,
     required TResult Function() getAppointments,
   }) {
     return deleteAppointment(id);
@@ -298,6 +313,7 @@ class _$DeleteAppointmentImpl implements _DeleteAppointment {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AppointmentInputs inputs)? addAppointment,
     TResult? Function(String id)? deleteAppointment,
+    TResult? Function(String appointmentId)? changeAppointmentStatus,
     TResult? Function()? getAppointments,
   }) {
     return deleteAppointment?.call(id);
@@ -308,6 +324,7 @@ class _$DeleteAppointmentImpl implements _DeleteAppointment {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppointmentInputs inputs)? addAppointment,
     TResult Function(String id)? deleteAppointment,
+    TResult Function(String appointmentId)? changeAppointmentStatus,
     TResult Function()? getAppointments,
     required TResult orElse(),
   }) {
@@ -322,6 +339,8 @@ class _$DeleteAppointmentImpl implements _DeleteAppointment {
   TResult map<TResult extends Object?>({
     required TResult Function(_AddAppointment value) addAppointment,
     required TResult Function(_DeleteAppointment value) deleteAppointment,
+    required TResult Function(_ChangeAppointmentStatus value)
+        changeAppointmentStatus,
     required TResult Function(_GetAppointment value) getAppointments,
   }) {
     return deleteAppointment(this);
@@ -332,6 +351,7 @@ class _$DeleteAppointmentImpl implements _DeleteAppointment {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AddAppointment value)? addAppointment,
     TResult? Function(_DeleteAppointment value)? deleteAppointment,
+    TResult? Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult? Function(_GetAppointment value)? getAppointments,
   }) {
     return deleteAppointment?.call(this);
@@ -342,6 +362,7 @@ class _$DeleteAppointmentImpl implements _DeleteAppointment {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AddAppointment value)? addAppointment,
     TResult Function(_DeleteAppointment value)? deleteAppointment,
+    TResult Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult Function(_GetAppointment value)? getAppointments,
     required TResult orElse(),
   }) {
@@ -360,6 +381,157 @@ abstract class _DeleteAppointment implements AppointmentEvent {
   @JsonKey(ignore: true)
   _$$DeleteAppointmentImplCopyWith<_$DeleteAppointmentImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeAppointmentStatusImplCopyWith<$Res> {
+  factory _$$ChangeAppointmentStatusImplCopyWith(
+          _$ChangeAppointmentStatusImpl value,
+          $Res Function(_$ChangeAppointmentStatusImpl) then) =
+      __$$ChangeAppointmentStatusImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String appointmentId});
+}
+
+/// @nodoc
+class __$$ChangeAppointmentStatusImplCopyWithImpl<$Res>
+    extends _$AppointmentEventCopyWithImpl<$Res, _$ChangeAppointmentStatusImpl>
+    implements _$$ChangeAppointmentStatusImplCopyWith<$Res> {
+  __$$ChangeAppointmentStatusImplCopyWithImpl(
+      _$ChangeAppointmentStatusImpl _value,
+      $Res Function(_$ChangeAppointmentStatusImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? appointmentId = null,
+  }) {
+    return _then(_$ChangeAppointmentStatusImpl(
+      appointmentId: null == appointmentId
+          ? _value.appointmentId
+          : appointmentId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeAppointmentStatusImpl implements _ChangeAppointmentStatus {
+  const _$ChangeAppointmentStatusImpl({required this.appointmentId});
+
+  @override
+  final String appointmentId;
+
+  @override
+  String toString() {
+    return 'AppointmentEvent.changeAppointmentStatus(appointmentId: $appointmentId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeAppointmentStatusImpl &&
+            (identical(other.appointmentId, appointmentId) ||
+                other.appointmentId == appointmentId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, appointmentId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeAppointmentStatusImplCopyWith<_$ChangeAppointmentStatusImpl>
+      get copyWith => __$$ChangeAppointmentStatusImplCopyWithImpl<
+          _$ChangeAppointmentStatusImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AppointmentInputs inputs) addAppointment,
+    required TResult Function(String id) deleteAppointment,
+    required TResult Function(String appointmentId) changeAppointmentStatus,
+    required TResult Function() getAppointments,
+  }) {
+    return changeAppointmentStatus(appointmentId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AppointmentInputs inputs)? addAppointment,
+    TResult? Function(String id)? deleteAppointment,
+    TResult? Function(String appointmentId)? changeAppointmentStatus,
+    TResult? Function()? getAppointments,
+  }) {
+    return changeAppointmentStatus?.call(appointmentId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AppointmentInputs inputs)? addAppointment,
+    TResult Function(String id)? deleteAppointment,
+    TResult Function(String appointmentId)? changeAppointmentStatus,
+    TResult Function()? getAppointments,
+    required TResult orElse(),
+  }) {
+    if (changeAppointmentStatus != null) {
+      return changeAppointmentStatus(appointmentId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AddAppointment value) addAppointment,
+    required TResult Function(_DeleteAppointment value) deleteAppointment,
+    required TResult Function(_ChangeAppointmentStatus value)
+        changeAppointmentStatus,
+    required TResult Function(_GetAppointment value) getAppointments,
+  }) {
+    return changeAppointmentStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AddAppointment value)? addAppointment,
+    TResult? Function(_DeleteAppointment value)? deleteAppointment,
+    TResult? Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
+    TResult? Function(_GetAppointment value)? getAppointments,
+  }) {
+    return changeAppointmentStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AddAppointment value)? addAppointment,
+    TResult Function(_DeleteAppointment value)? deleteAppointment,
+    TResult Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
+    TResult Function(_GetAppointment value)? getAppointments,
+    required TResult orElse(),
+  }) {
+    if (changeAppointmentStatus != null) {
+      return changeAppointmentStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeAppointmentStatus implements AppointmentEvent {
+  const factory _ChangeAppointmentStatus(
+      {required final String appointmentId}) = _$ChangeAppointmentStatusImpl;
+
+  String get appointmentId;
+  @JsonKey(ignore: true)
+  _$$ChangeAppointmentStatusImplCopyWith<_$ChangeAppointmentStatusImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -402,6 +574,7 @@ class _$GetAppointmentImpl implements _GetAppointment {
   TResult when<TResult extends Object?>({
     required TResult Function(AppointmentInputs inputs) addAppointment,
     required TResult Function(String id) deleteAppointment,
+    required TResult Function(String appointmentId) changeAppointmentStatus,
     required TResult Function() getAppointments,
   }) {
     return getAppointments();
@@ -412,6 +585,7 @@ class _$GetAppointmentImpl implements _GetAppointment {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AppointmentInputs inputs)? addAppointment,
     TResult? Function(String id)? deleteAppointment,
+    TResult? Function(String appointmentId)? changeAppointmentStatus,
     TResult? Function()? getAppointments,
   }) {
     return getAppointments?.call();
@@ -422,6 +596,7 @@ class _$GetAppointmentImpl implements _GetAppointment {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppointmentInputs inputs)? addAppointment,
     TResult Function(String id)? deleteAppointment,
+    TResult Function(String appointmentId)? changeAppointmentStatus,
     TResult Function()? getAppointments,
     required TResult orElse(),
   }) {
@@ -436,6 +611,8 @@ class _$GetAppointmentImpl implements _GetAppointment {
   TResult map<TResult extends Object?>({
     required TResult Function(_AddAppointment value) addAppointment,
     required TResult Function(_DeleteAppointment value) deleteAppointment,
+    required TResult Function(_ChangeAppointmentStatus value)
+        changeAppointmentStatus,
     required TResult Function(_GetAppointment value) getAppointments,
   }) {
     return getAppointments(this);
@@ -446,6 +623,7 @@ class _$GetAppointmentImpl implements _GetAppointment {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AddAppointment value)? addAppointment,
     TResult? Function(_DeleteAppointment value)? deleteAppointment,
+    TResult? Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult? Function(_GetAppointment value)? getAppointments,
   }) {
     return getAppointments?.call(this);
@@ -456,6 +634,7 @@ class _$GetAppointmentImpl implements _GetAppointment {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AddAppointment value)? addAppointment,
     TResult Function(_DeleteAppointment value)? deleteAppointment,
+    TResult Function(_ChangeAppointmentStatus value)? changeAppointmentStatus,
     TResult Function(_GetAppointment value)? getAppointments,
     required TResult orElse(),
   }) {
@@ -475,8 +654,8 @@ mixin _$AppointmentState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<AppointmentEntity> appointments, bool isDeleted, bool isAdded)
+    required TResult Function(List<AppointmentEntity> appointments,
+            bool isDeleted, bool isAdded, bool changedToCompleted)
         success,
     required TResult Function(String message) failed,
   }) =>
@@ -484,8 +663,8 @@ mixin _$AppointmentState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(
-            List<AppointmentEntity> appointments, bool isDeleted, bool isAdded)?
+    TResult? Function(List<AppointmentEntity> appointments, bool isDeleted,
+            bool isAdded, bool changedToCompleted)?
         success,
     TResult? Function(String message)? failed,
   }) =>
@@ -493,8 +672,8 @@ mixin _$AppointmentState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(
-            List<AppointmentEntity> appointments, bool isDeleted, bool isAdded)?
+    TResult Function(List<AppointmentEntity> appointments, bool isDeleted,
+            bool isAdded, bool changedToCompleted)?
         success,
     TResult Function(String message)? failed,
     required TResult orElse(),
@@ -572,8 +751,8 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<AppointmentEntity> appointments, bool isDeleted, bool isAdded)
+    required TResult Function(List<AppointmentEntity> appointments,
+            bool isDeleted, bool isAdded, bool changedToCompleted)
         success,
     required TResult Function(String message) failed,
   }) {
@@ -584,8 +763,8 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(
-            List<AppointmentEntity> appointments, bool isDeleted, bool isAdded)?
+    TResult? Function(List<AppointmentEntity> appointments, bool isDeleted,
+            bool isAdded, bool changedToCompleted)?
         success,
     TResult? Function(String message)? failed,
   }) {
@@ -596,8 +775,8 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(
-            List<AppointmentEntity> appointments, bool isDeleted, bool isAdded)?
+    TResult Function(List<AppointmentEntity> appointments, bool isDeleted,
+            bool isAdded, bool changedToCompleted)?
         success,
     TResult Function(String message)? failed,
     required TResult orElse(),
@@ -654,7 +833,10 @@ abstract class _$$SuccessImplCopyWith<$Res> {
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {List<AppointmentEntity> appointments, bool isDeleted, bool isAdded});
+      {List<AppointmentEntity> appointments,
+      bool isDeleted,
+      bool isAdded,
+      bool changedToCompleted});
 }
 
 /// @nodoc
@@ -671,6 +853,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
     Object? appointments = null,
     Object? isDeleted = null,
     Object? isAdded = null,
+    Object? changedToCompleted = null,
   }) {
     return _then(_$SuccessImpl(
       appointments: null == appointments
@@ -685,6 +868,10 @@ class __$$SuccessImplCopyWithImpl<$Res>
           ? _value.isAdded
           : isAdded // ignore: cast_nullable_to_non_nullable
               as bool,
+      changedToCompleted: null == changedToCompleted
+          ? _value.changedToCompleted
+          : changedToCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -695,7 +882,8 @@ class _$SuccessImpl implements _Success {
   _$SuccessImpl(
       {required this.appointments,
       this.isDeleted = false,
-      this.isAdded = false});
+      this.isAdded = false,
+      this.changedToCompleted = false});
 
   @override
   List<AppointmentEntity> appointments;
@@ -705,10 +893,13 @@ class _$SuccessImpl implements _Success {
   @override
   @JsonKey()
   bool isAdded;
+  @override
+  @JsonKey()
+  bool changedToCompleted;
 
   @override
   String toString() {
-    return 'AppointmentState.success(appointments: $appointments, isDeleted: $isDeleted, isAdded: $isAdded)';
+    return 'AppointmentState.success(appointments: $appointments, isDeleted: $isDeleted, isAdded: $isAdded, changedToCompleted: $changedToCompleted)';
   }
 
   @JsonKey(ignore: true)
@@ -721,38 +912,38 @@ class _$SuccessImpl implements _Success {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<AppointmentEntity> appointments, bool isDeleted, bool isAdded)
+    required TResult Function(List<AppointmentEntity> appointments,
+            bool isDeleted, bool isAdded, bool changedToCompleted)
         success,
     required TResult Function(String message) failed,
   }) {
-    return success(appointments, isDeleted, isAdded);
+    return success(appointments, isDeleted, isAdded, changedToCompleted);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(
-            List<AppointmentEntity> appointments, bool isDeleted, bool isAdded)?
+    TResult? Function(List<AppointmentEntity> appointments, bool isDeleted,
+            bool isAdded, bool changedToCompleted)?
         success,
     TResult? Function(String message)? failed,
   }) {
-    return success?.call(appointments, isDeleted, isAdded);
+    return success?.call(appointments, isDeleted, isAdded, changedToCompleted);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(
-            List<AppointmentEntity> appointments, bool isDeleted, bool isAdded)?
+    TResult Function(List<AppointmentEntity> appointments, bool isDeleted,
+            bool isAdded, bool changedToCompleted)?
         success,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(appointments, isDeleted, isAdded);
+      return success(appointments, isDeleted, isAdded, changedToCompleted);
     }
     return orElse();
   }
@@ -796,7 +987,8 @@ abstract class _Success implements AppointmentState {
   factory _Success(
       {required List<AppointmentEntity> appointments,
       bool isDeleted,
-      bool isAdded}) = _$SuccessImpl;
+      bool isAdded,
+      bool changedToCompleted}) = _$SuccessImpl;
 
   List<AppointmentEntity> get appointments;
   set appointments(List<AppointmentEntity> value);
@@ -804,6 +996,8 @@ abstract class _Success implements AppointmentState {
   set isDeleted(bool value);
   bool get isAdded;
   set isAdded(bool value);
+  bool get changedToCompleted;
+  set changedToCompleted(bool value);
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -863,8 +1057,8 @@ class _$FailedImpl implements _Failed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<AppointmentEntity> appointments, bool isDeleted, bool isAdded)
+    required TResult Function(List<AppointmentEntity> appointments,
+            bool isDeleted, bool isAdded, bool changedToCompleted)
         success,
     required TResult Function(String message) failed,
   }) {
@@ -875,8 +1069,8 @@ class _$FailedImpl implements _Failed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(
-            List<AppointmentEntity> appointments, bool isDeleted, bool isAdded)?
+    TResult? Function(List<AppointmentEntity> appointments, bool isDeleted,
+            bool isAdded, bool changedToCompleted)?
         success,
     TResult? Function(String message)? failed,
   }) {
@@ -887,8 +1081,8 @@ class _$FailedImpl implements _Failed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(
-            List<AppointmentEntity> appointments, bool isDeleted, bool isAdded)?
+    TResult Function(List<AppointmentEntity> appointments, bool isDeleted,
+            bool isAdded, bool changedToCompleted)?
         success,
     TResult Function(String message)? failed,
     required TResult orElse(),

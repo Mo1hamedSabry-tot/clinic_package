@@ -9,6 +9,7 @@ part 'schedule_state.dart';
 class ScheduleBloc extends Bloc<ScheduleEvent, ScheduleState> {
   final GetDoctorScheduleQuery _getSchedulesByDoctorId;
   final GetSchedulesByDayQuery _getSchedulesByDoctorIdDay;
+  
   ScheduleBloc(
       {required GetSchedulesByDayQuery getSchedulesByDoctorIdDay,
       required GetDoctorScheduleQuery getSchedulesByDoctorId})

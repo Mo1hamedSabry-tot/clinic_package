@@ -13,3 +13,6 @@ export 'login_query_impl.dart';
 export 'register_query_impl.dart';
 export 'update_personal_data_query_impl.dart';
 export 'get_time_slots_query_impl.dart';
+export 'get_user_data_query_impl.dart';
+export 'get_all_schedule_by_dotor_id_query_impl.dart';
+export 'add_schedule_query_impl.dart';

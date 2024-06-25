@@ -10,4 +10,11 @@ abstract class ScheduleRepo {
     required String doctorId,
     required int dayOfWeek,
   });
+    Future<Either<Failure, bool>> addSchedule({
+    required String doctorId,
+    required int dayOfWeek,
+    required String startTime,
+    required String endTime,
+    required String duration,
+  });
 }

@@ -8,6 +8,8 @@ class ScheduleDataSourceImpl implements ScheduleDataSource {
   final BaseDio _dioClient;
 
   String? token = preferences.getString(SharedKeys.accessToken);
+  String? userId = preferences.getString('userId');
+
   ScheduleDataSourceImpl({required BaseDio dioClient}) : _dioClient = dioClient;
 
   @override
@@ -15,6 +17,24 @@ class ScheduleDataSourceImpl implements ScheduleDataSource {
       {required String doctorId}) async {
     final response =
         await _dioClient.get("/Schedule/doctor/weeklySchedule/$doctorId");
+    return response.data;
+  }
+
+  @override
+  Future<Map<String, dynamic>> add({
+    required String doctorId,
+    required int dayOfWeek,
+    required String startTime,
+    required String endTime,
+    required String duration,
+  }) async {
+    final response = await _dioClient.post("/Schedule", data: {
+      "doctorId": userId,
+      "dayOfWeek": dayOfWeek,
+      "startTime": startTime,
+      "endTime": endTime,
+      "duration": duration
+    });
     return response.data;
   }
 

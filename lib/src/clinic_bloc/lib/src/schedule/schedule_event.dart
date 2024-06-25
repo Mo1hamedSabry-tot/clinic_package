@@ -8,4 +8,13 @@ class ScheduleEvent with _$ScheduleEvent {
     required String doctorId,
     required int dayOfWeek,
   }) = _GetSchedulesByDay;
+  
+  const factory ScheduleEvent.getAll() = _GetAll;
+  const factory ScheduleEvent.add({
+    required String doctorId,
+    required int dayOfWeek,
+    required String startTime,
+    required String endTime,
+    required String duration,
+  }) = _Add;
 }
