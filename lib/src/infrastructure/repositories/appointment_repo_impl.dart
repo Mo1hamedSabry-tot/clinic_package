@@ -51,7 +51,7 @@ class AppointmentRepoImpl implements AppointmentRepo {
   Future<Either<Failure, List<AppointmentEntity>>>
       getAppointmentForDoctor() async {
     try {
-      final response = await _appointmentDataSource.getAppointments();
+      final response = await _appointmentDataSource.getAppointmentForDoctor();
       final appointments =
           (response['value'] as Map<String, dynamic>)['data'] as List<dynamic>;
       return response["isSuccess"]
