@@ -26,7 +26,7 @@ class PrescriptionDataSourceImpl implements PrescriptionDataSource {
         'name': name,
         'appointmentId': appointmentId,
         'datetime': dateTime,
-        'medicines': medicines
+        'medicine': medicines
       },
     );
     return response.data;
