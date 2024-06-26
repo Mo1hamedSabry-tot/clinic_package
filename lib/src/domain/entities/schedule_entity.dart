@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class ScheduleEntity with EquatableMixin {
-  int? id;
+  String? id;
   int? dayOfWeek;
   String? startTime;
   String? endTime;
@@ -22,7 +22,7 @@ class ScheduleEntity with EquatableMixin {
       [id, dayOfWeek, startTime, endTime, doctorId, doctorName];
 
   ScheduleEntity copyWith({
-    int? id,
+    String? id,
     int? dayOfWeek,
     String? startTime,
     String? endTime,
@@ -41,7 +41,7 @@ class ScheduleEntity with EquatableMixin {
 
   factory ScheduleEntity.fromJson(Map<String, dynamic> json) {
     return ScheduleEntity(
-      id: json['id'] as int?,
+      id: json['id'] as String?,
       dayOfWeek: json['dayOfWeek'] as int?,
       startTime: json['startTime'] as String?,
       endTime: json['endTime'] as String?,
