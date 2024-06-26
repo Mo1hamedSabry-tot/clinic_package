@@ -10,7 +10,7 @@ class GetAllScheduleByDotorIdQueryImpl extends GetAllScheduleByDotorIdQuery {
   GetAllScheduleByDotorIdQueryImpl({required ScheduleRepo scheduleRepo})
       : _scheduleRepo = scheduleRepo;
   @override
-  Future<Either<Failure, List<ScheduleEntity>>> call(NoParams params) {
-    return _scheduleRepo.getSchedulesByDoctorId(doctorId: '');
+  Future<Either<Failure, List<ScheduleEntity>>> call(String params) {
+    return _scheduleRepo.getSchedulesByDoctorId(doctorId: params);
   }
 }

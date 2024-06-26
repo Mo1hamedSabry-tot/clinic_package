@@ -16,11 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ScheduleEvent {
+  String get doctorId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String doctorId) getSchedulesByDoctorId,
     required TResult Function(String doctorId, int dayOfWeek) getSchedulesByDay,
-    required TResult Function() getAll,
+    required TResult Function(String doctorId) getAll,
     required TResult Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)
         add,
@@ -30,7 +31,7 @@ mixin _$ScheduleEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String doctorId)? getSchedulesByDoctorId,
     TResult? Function(String doctorId, int dayOfWeek)? getSchedulesByDay,
-    TResult? Function()? getAll,
+    TResult? Function(String doctorId)? getAll,
     TResult? Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)?
         add,
@@ -40,7 +41,7 @@ mixin _$ScheduleEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String doctorId)? getSchedulesByDoctorId,
     TResult Function(String doctorId, int dayOfWeek)? getSchedulesByDay,
-    TResult Function()? getAll,
+    TResult Function(String doctorId)? getAll,
     TResult Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)?
         add,
@@ -73,6 +74,10 @@ mixin _$ScheduleEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ScheduleEventCopyWith<ScheduleEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -80,6 +85,8 @@ abstract class $ScheduleEventCopyWith<$Res> {
   factory $ScheduleEventCopyWith(
           ScheduleEvent value, $Res Function(ScheduleEvent) then) =
       _$ScheduleEventCopyWithImpl<$Res, ScheduleEvent>;
+  @useResult
+  $Res call({String doctorId});
 }
 
 /// @nodoc
@@ -91,14 +98,29 @@ class _$ScheduleEventCopyWithImpl<$Res, $Val extends ScheduleEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? doctorId = null,
+  }) {
+    return _then(_value.copyWith(
+      doctorId: null == doctorId
+          ? _value.doctorId
+          : doctorId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$GetSchedulesByDoctorIdImplCopyWith<$Res> {
+abstract class _$$GetSchedulesByDoctorIdImplCopyWith<$Res>
+    implements $ScheduleEventCopyWith<$Res> {
   factory _$$GetSchedulesByDoctorIdImplCopyWith(
           _$GetSchedulesByDoctorIdImpl value,
           $Res Function(_$GetSchedulesByDoctorIdImpl) then) =
       __$$GetSchedulesByDoctorIdImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({String doctorId});
 }
@@ -163,7 +185,7 @@ class _$GetSchedulesByDoctorIdImpl implements _GetSchedulesByDoctorId {
   TResult when<TResult extends Object?>({
     required TResult Function(String doctorId) getSchedulesByDoctorId,
     required TResult Function(String doctorId, int dayOfWeek) getSchedulesByDay,
-    required TResult Function() getAll,
+    required TResult Function(String doctorId) getAll,
     required TResult Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)
         add,
@@ -176,7 +198,7 @@ class _$GetSchedulesByDoctorIdImpl implements _GetSchedulesByDoctorId {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String doctorId)? getSchedulesByDoctorId,
     TResult? Function(String doctorId, int dayOfWeek)? getSchedulesByDay,
-    TResult? Function()? getAll,
+    TResult? Function(String doctorId)? getAll,
     TResult? Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)?
         add,
@@ -189,7 +211,7 @@ class _$GetSchedulesByDoctorIdImpl implements _GetSchedulesByDoctorId {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String doctorId)? getSchedulesByDoctorId,
     TResult Function(String doctorId, int dayOfWeek)? getSchedulesByDay,
-    TResult Function()? getAll,
+    TResult Function(String doctorId)? getAll,
     TResult Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)?
         add,
@@ -244,17 +266,21 @@ abstract class _GetSchedulesByDoctorId implements ScheduleEvent {
   const factory _GetSchedulesByDoctorId({required final String doctorId}) =
       _$GetSchedulesByDoctorIdImpl;
 
+  @override
   String get doctorId;
+  @override
   @JsonKey(ignore: true)
   _$$GetSchedulesByDoctorIdImplCopyWith<_$GetSchedulesByDoctorIdImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetSchedulesByDayImplCopyWith<$Res> {
+abstract class _$$GetSchedulesByDayImplCopyWith<$Res>
+    implements $ScheduleEventCopyWith<$Res> {
   factory _$$GetSchedulesByDayImplCopyWith(_$GetSchedulesByDayImpl value,
           $Res Function(_$GetSchedulesByDayImpl) then) =
       __$$GetSchedulesByDayImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({String doctorId, int dayOfWeek});
 }
@@ -328,7 +354,7 @@ class _$GetSchedulesByDayImpl implements _GetSchedulesByDay {
   TResult when<TResult extends Object?>({
     required TResult Function(String doctorId) getSchedulesByDoctorId,
     required TResult Function(String doctorId, int dayOfWeek) getSchedulesByDay,
-    required TResult Function() getAll,
+    required TResult Function(String doctorId) getAll,
     required TResult Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)
         add,
@@ -341,7 +367,7 @@ class _$GetSchedulesByDayImpl implements _GetSchedulesByDay {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String doctorId)? getSchedulesByDoctorId,
     TResult? Function(String doctorId, int dayOfWeek)? getSchedulesByDay,
-    TResult? Function()? getAll,
+    TResult? Function(String doctorId)? getAll,
     TResult? Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)?
         add,
@@ -354,7 +380,7 @@ class _$GetSchedulesByDayImpl implements _GetSchedulesByDay {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String doctorId)? getSchedulesByDoctorId,
     TResult Function(String doctorId, int dayOfWeek)? getSchedulesByDay,
-    TResult Function()? getAll,
+    TResult Function(String doctorId)? getAll,
     TResult Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)?
         add,
@@ -410,18 +436,24 @@ abstract class _GetSchedulesByDay implements ScheduleEvent {
       {required final String doctorId,
       required final int dayOfWeek}) = _$GetSchedulesByDayImpl;
 
+  @override
   String get doctorId;
   int get dayOfWeek;
+  @override
   @JsonKey(ignore: true)
   _$$GetSchedulesByDayImplCopyWith<_$GetSchedulesByDayImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetAllImplCopyWith<$Res> {
+abstract class _$$GetAllImplCopyWith<$Res>
+    implements $ScheduleEventCopyWith<$Res> {
   factory _$$GetAllImplCopyWith(
           _$GetAllImpl value, $Res Function(_$GetAllImpl) then) =
       __$$GetAllImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String doctorId});
 }
 
 /// @nodoc
@@ -431,38 +463,63 @@ class __$$GetAllImplCopyWithImpl<$Res>
   __$$GetAllImplCopyWithImpl(
       _$GetAllImpl _value, $Res Function(_$GetAllImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? doctorId = null,
+  }) {
+    return _then(_$GetAllImpl(
+      doctorId: null == doctorId
+          ? _value.doctorId
+          : doctorId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetAllImpl implements _GetAll {
-  const _$GetAllImpl();
+  const _$GetAllImpl({required this.doctorId});
+
+  @override
+  final String doctorId;
 
   @override
   String toString() {
-    return 'ScheduleEvent.getAll()';
+    return 'ScheduleEvent.getAll(doctorId: $doctorId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetAllImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllImpl &&
+            (identical(other.doctorId, doctorId) ||
+                other.doctorId == doctorId));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, doctorId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAllImplCopyWith<_$GetAllImpl> get copyWith =>
+      __$$GetAllImplCopyWithImpl<_$GetAllImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String doctorId) getSchedulesByDoctorId,
     required TResult Function(String doctorId, int dayOfWeek) getSchedulesByDay,
-    required TResult Function() getAll,
+    required TResult Function(String doctorId) getAll,
     required TResult Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)
         add,
   }) {
-    return getAll();
+    return getAll(doctorId);
   }
 
   @override
@@ -470,12 +527,12 @@ class _$GetAllImpl implements _GetAll {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String doctorId)? getSchedulesByDoctorId,
     TResult? Function(String doctorId, int dayOfWeek)? getSchedulesByDay,
-    TResult? Function()? getAll,
+    TResult? Function(String doctorId)? getAll,
     TResult? Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)?
         add,
   }) {
-    return getAll?.call();
+    return getAll?.call(doctorId);
   }
 
   @override
@@ -483,14 +540,14 @@ class _$GetAllImpl implements _GetAll {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String doctorId)? getSchedulesByDoctorId,
     TResult Function(String doctorId, int dayOfWeek)? getSchedulesByDay,
-    TResult Function()? getAll,
+    TResult Function(String doctorId)? getAll,
     TResult Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)?
         add,
     required TResult orElse(),
   }) {
     if (getAll != null) {
-      return getAll();
+      return getAll(doctorId);
     }
     return orElse();
   }
@@ -535,13 +592,22 @@ class _$GetAllImpl implements _GetAll {
 }
 
 abstract class _GetAll implements ScheduleEvent {
-  const factory _GetAll() = _$GetAllImpl;
+  const factory _GetAll({required final String doctorId}) = _$GetAllImpl;
+
+  @override
+  String get doctorId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetAllImplCopyWith<_$GetAllImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AddImplCopyWith<$Res> {
+abstract class _$$AddImplCopyWith<$Res>
+    implements $ScheduleEventCopyWith<$Res> {
   factory _$$AddImplCopyWith(_$AddImpl value, $Res Function(_$AddImpl) then) =
       __$$AddImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call(
       {String doctorId,
@@ -649,7 +715,7 @@ class _$AddImpl implements _Add {
   TResult when<TResult extends Object?>({
     required TResult Function(String doctorId) getSchedulesByDoctorId,
     required TResult Function(String doctorId, int dayOfWeek) getSchedulesByDay,
-    required TResult Function() getAll,
+    required TResult Function(String doctorId) getAll,
     required TResult Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)
         add,
@@ -662,7 +728,7 @@ class _$AddImpl implements _Add {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String doctorId)? getSchedulesByDoctorId,
     TResult? Function(String doctorId, int dayOfWeek)? getSchedulesByDay,
-    TResult? Function()? getAll,
+    TResult? Function(String doctorId)? getAll,
     TResult? Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)?
         add,
@@ -675,7 +741,7 @@ class _$AddImpl implements _Add {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String doctorId)? getSchedulesByDoctorId,
     TResult Function(String doctorId, int dayOfWeek)? getSchedulesByDay,
-    TResult Function()? getAll,
+    TResult Function(String doctorId)? getAll,
     TResult Function(String doctorId, int dayOfWeek, String startTime,
             String endTime, String duration)?
         add,
@@ -734,11 +800,13 @@ abstract class _Add implements ScheduleEvent {
       required final String endTime,
       required final String duration}) = _$AddImpl;
 
+  @override
   String get doctorId;
   int get dayOfWeek;
   String get startTime;
   String get endTime;
   String get duration;
+  @override
   @JsonKey(ignore: true)
   _$$AddImplCopyWith<_$AddImpl> get copyWith =>
       throw _privateConstructorUsedError;

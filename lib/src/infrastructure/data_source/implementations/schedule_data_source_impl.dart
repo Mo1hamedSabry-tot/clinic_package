@@ -8,7 +8,6 @@ class ScheduleDataSourceImpl implements ScheduleDataSource {
   final BaseDio _dioClient;
 
   String? token = preferences.getString(SharedKeys.accessToken);
-  String? userId = preferences.getString('userId');
 
   ScheduleDataSourceImpl({required BaseDio dioClient}) : _dioClient = dioClient;
 
@@ -29,7 +28,7 @@ class ScheduleDataSourceImpl implements ScheduleDataSource {
     required String duration,
   }) async {
     final response = await _dioClient.post("/Schedule", data: {
-      "doctorId": userId,
+      "doctorId": doctorId,
       "dayOfWeek": dayOfWeek,
       "startTime": startTime,
       "endTime": endTime,
