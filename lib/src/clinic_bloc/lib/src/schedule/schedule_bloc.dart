@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:clinic_package/clinic_package.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -31,6 +33,8 @@ class ScheduleBloc extends Bloc<ScheduleEvent, ScheduleState> {
                 (r) async => emit(ScheduleState.success(schedules: r)));
           });
     });
+    on<_GetAll>(_getAllHandler);
+    on<_Add>(_addHandler);
     on<_GetSchedulesByDay>(
       (event, emit) async {
         await event.maybeMap(
@@ -44,33 +48,59 @@ class ScheduleBloc extends Bloc<ScheduleEvent, ScheduleState> {
                     success: (success) =>
                         emit(success.copyWith(schedulesByDay: r))));
           },
-          getAll: (value) async {
-            emit(ScheduleState.loading());
-            final result = await _getAllScheduleQuery.call(NoParams());
+          // getAll: (value) async {
+          //   emit(ScheduleState.loading());
+          //   final result = await _getAllScheduleQuery.call(NoParams());
 
-            result.fold(
-                (failure) => emit(ScheduleState.error(failure.message)),
-                (schedules) =>
-                    emit(ScheduleState.success(schedules: schedules)));
-          },
-          add: (value) async {
-            final result = await _addScheduleQuery.call(ScheduleInputss(
-              doctorId: value.doctorId,
-              dayOfWeek: value.dayOfWeek,
-              startTime: value.startTime,
-              endTime: value.endTime,
-              duration: value.duration,
-            ));
+          //   result.fold(
+          //       (failure) => emit(ScheduleState.error(failure.message)),
+          //       (schedules) =>
+          //           emit(ScheduleState.success(schedules: schedules)));
+          // },
+          // add: (value) async {
+          //   final result = await _addScheduleQuery.call(ScheduleInputss(
+          //     doctorId: value.doctorId,
+          //     dayOfWeek: value.dayOfWeek,
+          //     startTime: value.startTime,
+          //     endTime: value.endTime,
+          //     duration: value.duration,
+          //   ));
 
-            result.fold((l) => emit(ScheduleState.error(l.message)), (r) async {
-              state.maybeMap(
-                  orElse: () {},
-                  success: (v) => emit(ScheduleState.success(
-                      schedules: v.schedules, added: true)));
-            });
-          },
+          //   result.fold((l) => emit(ScheduleState.error(l.message)), (r) async {
+          //     state.maybeMap(
+          //         orElse: () {},
+          //         success: (v) => emit(ScheduleState.success(
+          //             schedules: v.schedules, added: true)));
+          //   });
+          // },
         );
       },
     );
+  }
+
+  FutureOr<void> _getAllHandler(
+      _GetAll event, Emitter<ScheduleState> emit) async {
+    emit(ScheduleState.loading());
+    final result = await _getAllScheduleQuery.call(NoParams());
+
+    result.fold((failure) => emit(ScheduleState.error(failure.message)),
+        (schedules) => emit(ScheduleState.success(schedules: schedules)));
+  }
+
+  FutureOr<void> _addHandler(_Add event, Emitter<ScheduleState> emit) async {
+    final result = await _addScheduleQuery.call(ScheduleInputss(
+      doctorId: event.doctorId,
+      dayOfWeek: event.dayOfWeek,
+      startTime: event.startTime,
+      endTime: event.endTime,
+      duration: event.duration,
+    ));
+
+    result.fold((l) => emit(ScheduleState.error(l.message)), (r) async {
+      state.maybeMap(
+          orElse: () {},
+          success: (v) =>
+              emit(ScheduleState.success(schedules: v.schedules, added: true)));
+    });
   }
 }
