@@ -48,31 +48,7 @@ class ScheduleBloc extends Bloc<ScheduleEvent, ScheduleState> {
                     success: (success) =>
                         emit(success.copyWith(schedulesByDay: r))));
           },
-          // getAll: (value) async {
-          //   emit(ScheduleState.loading());
-          //   final result = await _getAllScheduleQuery.call(NoParams());
-
-          //   result.fold(
-          //       (failure) => emit(ScheduleState.error(failure.message)),
-          //       (schedules) =>
-          //           emit(ScheduleState.success(schedules: schedules)));
-          // },
-          // add: (value) async {
-          //   final result = await _addScheduleQuery.call(ScheduleInputss(
-          //     doctorId: value.doctorId,
-          //     dayOfWeek: value.dayOfWeek,
-          //     startTime: value.startTime,
-          //     endTime: value.endTime,
-          //     duration: value.duration,
-          //   ));
-
-          //   result.fold((l) => emit(ScheduleState.error(l.message)), (r) async {
-          //     state.maybeMap(
-          //         orElse: () {},
-          //         success: (v) => emit(ScheduleState.success(
-          //             schedules: v.schedules, added: true)));
-          //   });
-          // },
+          
         );
       },
     );
@@ -81,7 +57,7 @@ class ScheduleBloc extends Bloc<ScheduleEvent, ScheduleState> {
   FutureOr<void> _getAllHandler(
       _GetAll event, Emitter<ScheduleState> emit) async {
     emit(ScheduleState.loading());
-    final result = await _getAllScheduleQuery.call(NoParams());
+    final result = await _getAllScheduleQuery.call(event.doctorId);
 
     result.fold((failure) => emit(ScheduleState.error(failure.message)),
         (schedules) => emit(ScheduleState.success(schedules: schedules)));
