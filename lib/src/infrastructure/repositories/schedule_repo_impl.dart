@@ -17,9 +17,9 @@ class ScheduleRepoImpl implements ScheduleRepo {
     try {
       final response =
           await _scheduleDataSource.getAllByDoctorId(doctorId: doctorId);
-      if ((response['value'] ).isNotEmpty) {
+      if ((response['value']['data'] as List<dynamic>).isNotEmpty) {
         final Right<Failure, List<ScheduleEntity>> schedules = Right(
-            (response['value'] )
+            (response['value']['data'] as List<dynamic>)
                 .map((e) => ScheduleEntity.fromJson(e))
                 .toList());
         return schedules;
@@ -63,9 +63,9 @@ class ScheduleRepoImpl implements ScheduleRepo {
     try {
       final response = await _scheduleDataSource.getSchedulesByDay(
           doctorId: doctorId, dayOfWeek: dayOfWeek);
-      if ((response['value'] as List<dynamic>).isNotEmpty) {
+      if ((response['value']['data'] as List<dynamic>).isNotEmpty) {
         final Right<Failure, List<ScheduleEntity>> schedules = Right(
-            (response['value'] as List<dynamic>)
+            (response['value']['data'] as List<dynamic>)
                 .map((e) => ScheduleEntity.fromJson(e))
                 .toList());
         return schedules;
