@@ -11,14 +11,14 @@ part 'appointment_state.dart';
 class AppointmentBloc extends Bloc<AppointmentEvent, AppointmentState> {
   final AddAppointmentCommand _addAppointmentCommand;
   final DeleteAppointmentCommand _deleteAppointmentCommand;
-  final GetAppointmentQuery _getAppointmentQuery;
+  final GetAllAppointmentQuery _getAppointmentQuery;
   final GetAppointmentForDoctorQuery _getAppointmentForDoctorQuery;
   final ChangeStatusAppointmentCommand _changeStatusAppointmentCommand;
 
   AppointmentBloc(
       {required AddAppointmentCommand addAppointmentCommand,
       required DeleteAppointmentCommand deleteAppointmentCommand,
-      required GetAppointmentQuery getAppointmentQuery,
+      required GetAllAppointmentQuery getAppointmentQuery,
       required GetAppointmentForDoctorQuery getAppointmentForDoctorQuery,
       required ChangeStatusAppointmentCommand changeStatusAppointmentCommand})
       : _getAppointmentQuery = getAppointmentQuery,
