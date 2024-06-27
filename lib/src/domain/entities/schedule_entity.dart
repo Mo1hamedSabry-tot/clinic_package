@@ -3,6 +3,7 @@ import 'package:equatable/equatable.dart';
 class ScheduleEntity with EquatableMixin {
   String? date;
   int? dayOfWeek;
+  int? id;
   String? startTime;
   String? endTime;
   String? doctorId;
@@ -15,14 +16,16 @@ class ScheduleEntity with EquatableMixin {
     this.endTime,
     this.doctorId,
     this.doctorName,
+    this.id,
   });
 
   @override
   List<Object?> get props =>
-      [date, dayOfWeek, startTime, endTime, doctorId, doctorName];
+      [date, dayOfWeek, startTime, endTime, doctorId, doctorName, id];
 
   ScheduleEntity copyWith({
     String? id,
+    String? date,
     int? dayOfWeek,
     String? startTime,
     String? endTime,
@@ -32,6 +35,7 @@ class ScheduleEntity with EquatableMixin {
     return ScheduleEntity(
       date: id ?? this.date,
       dayOfWeek: dayOfWeek ?? this.dayOfWeek,
+      id: dayOfWeek ?? this.id,
       startTime: startTime ?? this.startTime,
       endTime: endTime ?? this.endTime,
       doctorId: doctorId ?? this.doctorId,
