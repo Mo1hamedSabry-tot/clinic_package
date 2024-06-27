@@ -6,7 +6,7 @@ import '../core/base_types/index.dart';
 import '../core/primitives/inputs/appointment_data.dart';
 import '../core/primitives/inputs/no_params.dart';
 
-abstract class GetAppointmentQuery extends BaseQuery<
+abstract class GetAllAppointmentQuery extends BaseQuery<
     Future<Either<Failure, List<AppointmentEntity>>>, NoParams> {}
 
 abstract class GetAppointmentForDoctorQuery extends BaseQuery<

@@ -62,4 +62,19 @@ class AppointmentRepoImpl implements AppointmentRepo {
       return Left(ServerFailure(e.toString()));
     }
   }
+  
+  @override
+  Future<Either<Failure, List<AppointmentEntity>>> getAllAppointments()async {
+  try {
+      final response = await _appointmentDataSource.getAllAppointments();
+      final appointments =
+          (response['value'] as Map<String, dynamic>)['data'] as List<dynamic>;
+      return response["isSuccess"]
+          ? Right(
+              appointments.map((e) => AppointmentEntity.fromJson(e)).toList())
+          : Left(ServerFailure(response['errors'][0]));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
 }

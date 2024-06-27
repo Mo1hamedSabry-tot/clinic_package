@@ -36,7 +36,7 @@ class AppointmentDataSourceImpl implements AppointmentDataSource {
   }
 
   @override
-  Future<Map<String, dynamic>> getAppointments() async {
+  Future<Map<String, dynamic>> getAllAppointments() async {
     try {
       final resposnse = await _dioClient.get("/Appointment");
       return resposnse.data;
