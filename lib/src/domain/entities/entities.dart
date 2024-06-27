@@ -12,3 +12,4 @@ export 'prescription_entity.dart';
 export 'schedule_entity.dart';
 export 'time_slot_entity.dart';
 export 'change_appointment_status_entity.dart';
+export 'patient_entity.dart';
