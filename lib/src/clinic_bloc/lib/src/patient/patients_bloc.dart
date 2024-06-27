@@ -1,7 +1,5 @@
 import 'package:bloc/bloc.dart';
-import '../../../app/contracts/patients.dart';
-import '../../../app/core/primitives/inputs/no_params.dart';
-import '../../../domain/entities/patient_entity.dart';
+import 'package:clinic_package/clinic_package.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'patients_bloc.freezed.dart';

@@ -10,3 +10,4 @@ export 'search/search_bloc.dart';
 export 'update_personal_data/update_personal_data_bloc.dart';
 export "time_slot/time_slot_bloc.dart";
 export 'doctor_profile_bloc/doctor_profile_bloc.dart';
+export 'patient/patients_bloc.dart';
