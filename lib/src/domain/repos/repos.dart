@@ -10,3 +10,4 @@ export 'search_repo.dart';
 export 'update_personal_data_repo.dart';
 export 'time_slot_repo.dart';
 export 'patients_repo.dart';
+export 'payroll_repo.dart';

@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
+import 'package:bloc/bloc.dart';
 import 'package:clinic_package/clinic_package.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
