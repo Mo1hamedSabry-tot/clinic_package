@@ -7,3 +7,5 @@ export 'update_appointment_command_impl.dart';
 export 'update_medical_history_command_impl.dart';
 export 'change_appointment_command_impl.dart';
 export 'update_doctor_profile_command_impl.dart';
+export 'check_in_command_impl.dart';
+export 'check_out_command_impl.dart';

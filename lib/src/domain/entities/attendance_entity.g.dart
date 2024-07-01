@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'generic_entity.dart';
+part of 'attendance_entity.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GenericEntityImpl _$$GenericEntityImplFromJson(Map<String, dynamic> json) =>
-    _$GenericEntityImpl(
+_$AttendanceEntityImpl _$$AttendanceEntityImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AttendanceEntityImpl(
       value: json['value'],
       status: (json['status'] as num?)?.toInt(),
       isSuccess: json['isSuccess'] as bool?,
@@ -20,7 +21,8 @@ _$GenericEntityImpl _$$GenericEntityImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$GenericEntityImplToJson(_$GenericEntityImpl instance) =>
+Map<String, dynamic> _$$AttendanceEntityImplToJson(
+        _$AttendanceEntityImpl instance) =>
     <String, dynamic>{
       'value': instance.value,
       'status': instance.status,

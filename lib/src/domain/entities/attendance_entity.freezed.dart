@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'generic_entity.dart';
+part of 'attendance_entity.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,14 +14,13 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-GenericEntity _$GenericEntityFromJson(Map<String, dynamic> json) {
-  return _GenericEntity.fromJson(json);
+AttendanceEntity _$AttendanceEntityFromJson(Map<String, dynamic> json) {
+  return _AttendanceEntity.fromJson(json);
 }
 
 /// @nodoc
-mixin _$GenericEntity {
-  dynamic get value =>
-      throw _privateConstructorUsedError; // Keeping it dynamic since value can be anything or null
+mixin _$AttendanceEntity {
+  Object? get value => throw _privateConstructorUsedError;
   int? get status => throw _privateConstructorUsedError;
   bool? get isSuccess => throw _privateConstructorUsedError;
   String? get successMessage => throw _privateConstructorUsedError;
@@ -32,18 +31,18 @@ mixin _$GenericEntity {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GenericEntityCopyWith<GenericEntity> get copyWith =>
+  $AttendanceEntityCopyWith<AttendanceEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GenericEntityCopyWith<$Res> {
-  factory $GenericEntityCopyWith(
-          GenericEntity value, $Res Function(GenericEntity) then) =
-      _$GenericEntityCopyWithImpl<$Res, GenericEntity>;
+abstract class $AttendanceEntityCopyWith<$Res> {
+  factory $AttendanceEntityCopyWith(
+          AttendanceEntity value, $Res Function(AttendanceEntity) then) =
+      _$AttendanceEntityCopyWithImpl<$Res, AttendanceEntity>;
   @useResult
   $Res call(
-      {dynamic value,
+      {Object? value,
       int? status,
       bool? isSuccess,
       String? successMessage,
@@ -53,9 +52,9 @@ abstract class $GenericEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GenericEntityCopyWithImpl<$Res, $Val extends GenericEntity>
-    implements $GenericEntityCopyWith<$Res> {
-  _$GenericEntityCopyWithImpl(this._value, this._then);
+class _$AttendanceEntityCopyWithImpl<$Res, $Val extends AttendanceEntity>
+    implements $AttendanceEntityCopyWith<$Res> {
+  _$AttendanceEntityCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -74,10 +73,7 @@ class _$GenericEntityCopyWithImpl<$Res, $Val extends GenericEntity>
     Object? validationErrors = freezed,
   }) {
     return _then(_value.copyWith(
-      value: freezed == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+      value: freezed == value ? _value.value : value,
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -107,15 +103,15 @@ class _$GenericEntityCopyWithImpl<$Res, $Val extends GenericEntity>
 }
 
 /// @nodoc
-abstract class _$$GenericEntityImplCopyWith<$Res>
-    implements $GenericEntityCopyWith<$Res> {
-  factory _$$GenericEntityImplCopyWith(
-          _$GenericEntityImpl value, $Res Function(_$GenericEntityImpl) then) =
-      __$$GenericEntityImplCopyWithImpl<$Res>;
+abstract class _$$AttendanceEntityImplCopyWith<$Res>
+    implements $AttendanceEntityCopyWith<$Res> {
+  factory _$$AttendanceEntityImplCopyWith(_$AttendanceEntityImpl value,
+          $Res Function(_$AttendanceEntityImpl) then) =
+      __$$AttendanceEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {dynamic value,
+      {Object? value,
       int? status,
       bool? isSuccess,
       String? successMessage,
@@ -125,11 +121,11 @@ abstract class _$$GenericEntityImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GenericEntityImplCopyWithImpl<$Res>
-    extends _$GenericEntityCopyWithImpl<$Res, _$GenericEntityImpl>
-    implements _$$GenericEntityImplCopyWith<$Res> {
-  __$$GenericEntityImplCopyWithImpl(
-      _$GenericEntityImpl _value, $Res Function(_$GenericEntityImpl) _then)
+class __$$AttendanceEntityImplCopyWithImpl<$Res>
+    extends _$AttendanceEntityCopyWithImpl<$Res, _$AttendanceEntityImpl>
+    implements _$$AttendanceEntityImplCopyWith<$Res> {
+  __$$AttendanceEntityImplCopyWithImpl(_$AttendanceEntityImpl _value,
+      $Res Function(_$AttendanceEntityImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -143,11 +139,8 @@ class __$$GenericEntityImplCopyWithImpl<$Res>
     Object? errors = freezed,
     Object? validationErrors = freezed,
   }) {
-    return _then(_$GenericEntityImpl(
-      value: freezed == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+    return _then(_$AttendanceEntityImpl(
+      value: freezed == value ? _value.value : value,
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -178,8 +171,8 @@ class __$$GenericEntityImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GenericEntityImpl implements _GenericEntity {
-  _$GenericEntityImpl(
+class _$AttendanceEntityImpl implements _AttendanceEntity {
+  _$AttendanceEntityImpl(
       {this.value,
       this.status,
       this.isSuccess,
@@ -190,12 +183,11 @@ class _$GenericEntityImpl implements _GenericEntity {
       : _errors = errors,
         _validationErrors = validationErrors;
 
-  factory _$GenericEntityImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GenericEntityImplFromJson(json);
+  factory _$AttendanceEntityImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AttendanceEntityImplFromJson(json);
 
   @override
-  final dynamic value;
-// Keeping it dynamic since value can be anything or null
+  final Object? value;
   @override
   final int? status;
   @override
@@ -227,14 +219,14 @@ class _$GenericEntityImpl implements _GenericEntity {
 
   @override
   String toString() {
-    return 'GenericEntity(value: $value, status: $status, isSuccess: $isSuccess, successMessage: $successMessage, correlationId: $correlationId, errors: $errors, validationErrors: $validationErrors)';
+    return 'AttendanceEntity(value: $value, status: $status, isSuccess: $isSuccess, successMessage: $successMessage, correlationId: $correlationId, errors: $errors, validationErrors: $validationErrors)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GenericEntityImpl &&
+            other is _$AttendanceEntityImpl &&
             const DeepCollectionEquality().equals(other.value, value) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.isSuccess, isSuccess) ||
@@ -263,33 +255,34 @@ class _$GenericEntityImpl implements _GenericEntity {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GenericEntityImplCopyWith<_$GenericEntityImpl> get copyWith =>
-      __$$GenericEntityImplCopyWithImpl<_$GenericEntityImpl>(this, _$identity);
+  _$$AttendanceEntityImplCopyWith<_$AttendanceEntityImpl> get copyWith =>
+      __$$AttendanceEntityImplCopyWithImpl<_$AttendanceEntityImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GenericEntityImplToJson(
+    return _$$AttendanceEntityImplToJson(
       this,
     );
   }
 }
 
-abstract class _GenericEntity implements GenericEntity {
-  factory _GenericEntity(
-      {final dynamic value,
+abstract class _AttendanceEntity implements AttendanceEntity {
+  factory _AttendanceEntity(
+      {final Object? value,
       final int? status,
       final bool? isSuccess,
       final String? successMessage,
       final String? correlationId,
       final List<String>? errors,
-      final List<ValidationError>? validationErrors}) = _$GenericEntityImpl;
+      final List<ValidationError>? validationErrors}) = _$AttendanceEntityImpl;
 
-  factory _GenericEntity.fromJson(Map<String, dynamic> json) =
-      _$GenericEntityImpl.fromJson;
+  factory _AttendanceEntity.fromJson(Map<String, dynamic> json) =
+      _$AttendanceEntityImpl.fromJson;
 
   @override
-  dynamic get value;
-  @override // Keeping it dynamic since value can be anything or null
+  Object? get value;
+  @override
   int? get status;
   @override
   bool? get isSuccess;
@@ -303,6 +296,6 @@ abstract class _GenericEntity implements GenericEntity {
   List<ValidationError>? get validationErrors;
   @override
   @JsonKey(ignore: true)
-  _$$GenericEntityImplCopyWith<_$GenericEntityImpl> get copyWith =>
+  _$$AttendanceEntityImplCopyWith<_$AttendanceEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,3 +1,4 @@
+import 'package:clinic_package/clinic_package.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'generic_entity.freezed.dart';
@@ -12,7 +13,7 @@ class GenericEntity with _$GenericEntity {
     String? successMessage,
     String? correlationId,
     List<String>? errors,
-    List<String>? validationErrors,
+    List<ValidationError>? validationErrors,
   }) = _GenericEntity;
 
   factory GenericEntity.fromJson(Map<String, dynamic> json) => _$GenericEntityFromJson(json);
