@@ -10,3 +10,4 @@ export 'search_data_source.dart';
 export 'update_personal_data_source.dart';
 export 'time_slot_data_source.dart';
 export 'patients_data_source.dart';
+export 'payroll_data_source.dart';

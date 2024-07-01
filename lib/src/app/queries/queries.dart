@@ -18,3 +18,4 @@ export 'get_all_schedule_by_dotor_id_query_impl.dart';
 export 'add_schedule_query_impl.dart';
 export 'get_appointment_for_doctor.dart';
 export 'get_all_patients_query_impl.dart';
+export 'get_payroll_all_months_query_impl.dart';
